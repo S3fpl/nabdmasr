@@ -20,12 +20,6 @@ const Form = ({ closeForm, initialAuthType }) => {
     return (
         <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0"}`}>
             <div className={`bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-96 relative overflow-hidden transform transition-transform duration-300 ${animate ? "scale-100" : "scale-90"}`}>
-                {/* Red wave SVG */}
-                <div className="w-full absolute top-0 left-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path fill="#dc2626" fillOpacity="1" d="M0,288L80,261.3C160,235,320,181,480,181.3C640,181,800,235,960,250.7C1120,267,1280,245,1360,234.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
-                    </svg>
-                </div>
 
                 {/* Close button */}
                 <XIcon 
