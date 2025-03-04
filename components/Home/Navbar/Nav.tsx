@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Navlinks } from "@/constant/consant";
@@ -21,10 +20,14 @@ const Nav: React.FC<NavProps> = ({ openNav }) => {
         setShowForm(true);
     }, []);
 
+    const closeForm = () => {
+        setShowForm(false);
+    };
+
     return (
         <>
-            <nav className="flex items-center justify-between h-[12vh] px-6 md:px-12 bg-transparent fixed top-0 w-full z-50 transition-all duration-300 l   p-4">
-            {/* Logo */}
+            <nav className="flex items-center justify-between h-[12vh] px-6 md:px-12 bg-transparent fixed top-0 w-full z-50 transition-all duration-300 p-4">
+                {/* Logo */}
                 <Link href="/" className="flex-shrink-0">
                     <Image
                         src="/nabdmasr.ico"
@@ -51,34 +54,30 @@ const Nav: React.FC<NavProps> = ({ openNav }) => {
 
                 {/* Buttons & Mobile Menu Icon */}
                 <div className="flex items-center space-x-4 md:space-x-6">
-    <Button
-        onClick={() => handleAuth("login")}
-        className="border border-white/30 px-5 py-2 rounded-2xl transition duration-300 shadow-xl backdrop-blur-xl bg-white/10 text-white  hover:bg-white/20 hover:border-white/50 hover:shadow-2xltext-white opacity-80 hover:opacity-100"
-    >
-        Login
-    </Button>
-    <Button
-        onClick={() => handleAuth("signup")}
-        className="border border-white/30 px-5 py-2 rounded-2xl transition duration-300 shadow-xl backdrop-blur-xl bg-white/10   hover:bg-white/20 hover:border-white/50 hover:shadow-2xl text-white opacity-80 hover:opacity-100"
-    >
-        Signup
-    </Button>
+                    <Button
+                        onClick={() => handleAuth("login")}
+                        className="border border-white/30 px-5 py-2 rounded-2xl transition duration-300 shadow-xl backdrop-blur-xl bg-white/10 text-white hover:bg-white/20 hover:border-white/50 hover:shadow-2xltext-white opacity-80 hover:opacity-100"
+                    >
+                        Login
+                    </Button>
+                    <Button
+                        onClick={() => handleAuth("signup")}
+                        className="border border-white/30 px-5 py-2 rounded-2xl transition duration-300 shadow-xl backdrop-blur-xl bg-white/10 hover:bg-white/20 hover:border-white/50 hover:shadow-2xl text-white opacity-80 hover:opacity-100"
+                    >
+                        Signup
+                    </Button>
 
-    {/* Mobile Menu Icon */}
-    <MenuIcon
-        onClick={openNav}
-        className="cursor-pointer size-8 text-white lg:hidden transition-transform duration-300 hover:scale-110"
-        aria-label="Open navigation menu"
-    />
-
-
-</div>
-
-
+                    {/* Mobile Menu Icon */}
+                    <MenuIcon
+                        onClick={openNav}
+                        className="cursor-pointer size-8 text-white lg:hidden transition-transform duration-300 hover:scale-110"
+                        aria-label="Open navigation menu"
+                    />
+                </div>
             </nav>
 
             {/* Show Form if Button Clicked */}
-            {showForm && <Form closeForm={() => setShowForm(false)} initialAuthType={authType} />}
+            {showForm && <Form closeForm={closeForm} initialAuthType={authType} />}
         </>
     );
 };

@@ -3,7 +3,8 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Image from "next/image"; // استيراد Image من Next.js
+import Image from "next/image";
+import { Shapes } from "@/components/ui/Shaps"; // استيراد Shapes
 
 const Footer = () => {
     useEffect(() => {
@@ -12,10 +13,18 @@ const Footer = () => {
 
     return (
         <footer className="w-full relative z-10 backdrop-blur-lg bg-white/10 py-12 mt-16 border-t border-white/20">
+            {/* عنصر Shapes العائم */}
+            <div className="absolute -top-6 left-6 opacity-90 animate-float z-10 pointer-events-none">
+                <Shapes className="w-10 h-10 md:w-12 md:h-12" />
+            </div>
+            <div className="absolute -top-6 right-6 opacity-90 animate-float z-10 pointer-events-none">
+                <Shapes className="w-10 h-10 md:w-12 md:h-12" />
+            </div>
+
             <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start justify-between px-6 gap-8">
                 {/* Logo Section */}
                 <div className="flex items-center space-x-4">
-                    <Image src="/logo.ico" alt="Logo" width={64} height={64} /> {/* استخدام Image */}
+                    <Image src="/logo.ico" alt="Logo" width={64} height={64} />
                     <h2 className="text-white text-2xl font-semibold">NabdMasr</h2>
                 </div>
 

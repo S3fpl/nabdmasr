@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import clsx from "clsx";
+import { Shapes } from "@/components/ui/Shaps"; // تأكد من أن المسار صحيح
 
 const About = () => {
     useEffect(() => {
@@ -19,6 +20,15 @@ const About = () => {
 
     return (
         <section className="w-[90%] mx-auto flex flex-col items-center gap-16 py-16 rounded-3xl shadow-2xl overflow-hidden relative bg-gray-900/40 backdrop-blur-lg border border-white/10">
+            {/* ⭐️ أشكال متحركة ⭐️ */}
+            <div className="absolute bottom-6 left-16 opacity-80 animate-float ">
+                <Shapes className="w-8 h-8 md:w-12 md:h-12" />
+            </div>
+            <div className="absolute top-6 right-16 opacity-80 animate-float ">
+                <Shapes className="w-10 h-10 md:w-14 md:h-14" />
+            </div>
+
+
             {/* Title */}
             <div className="relative z-10 text-center" data-aos="fade-up">
                 <h2 className="text-5xl font-extrabold text-red-500 drop-shadow-lg">Who We Are</h2>
@@ -56,7 +66,6 @@ const About = () => {
                     >
                         Learn More
                     </button>
-
                 </div>
             </div>
         </section>

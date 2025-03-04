@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { XIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Shapes } from "@/components/ui/Shaps";
 
 const Form = ({ closeForm, initialAuthType }) => {
     const [authType, setAuthType] = useState(initialAuthType);
@@ -19,11 +20,22 @@ const Form = ({ closeForm, initialAuthType }) => {
 
     return (
         <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0"}`}>
-            <div className={`bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-96 relative overflow-hidden transform transition-transform duration-300 ${animate ? "scale-100" : "scale-90"}`}>
+
+            <div className={`relative w-96 p-6 rounded-lg shadow-lg backdrop-blur-lg bg-white/10 dark:bg-gray-900/20 border border-white/20 transform transition-transform duration-300 ${animate ? "scale-100" : "scale-90"}`}>
+
+                {/* Shapes - Top Right */}
+                <div className="absolute -top-8 -right-8 opacity-80 animate-float z-[9999] pointer-events-none">
+                    <Shapes className="w-14 h-14 md:w-16 md:h-16" />
+                </div>
+
+                {/* Shapes - Bottom Left */}
+                <div className="absolute -bottom-8 -left-8 opacity-80 animate-float z-[9999]">
+                    <Shapes className="w-14 h-14 md:w-16 md:h-16" />
+                </div>
 
                 {/* Close button */}
-                <XIcon 
-                    onClick={handleClose} 
+                <XIcon
+                    onClick={handleClose}
                     className="absolute top-4 right-4 sm:w-8 sm:h-8 w-6 h-6 font-extrabold cursor-pointer text-white hover:text-red-500 transition duration-200"
                 />
 
@@ -37,21 +49,21 @@ const Form = ({ closeForm, initialAuthType }) => {
                         <input
                             type="text"
                             placeholder="Full Name"
-                            className="w-full p-2 border rounded"
+                            className="w-full p-2 border rounded bg-white/20 backdrop-blur-md text-black dark:text-white placeholder-gray-400"
                         />
                     )}
                     <input
                         type="email"
                         placeholder="Email"
-                        className="w-full p-2 border rounded"
+                        className="w-full p-2 border rounded bg-white/20 backdrop-blur-md text-black dark:text-white placeholder-gray-400"
                     />
                     <input
                         type="password"
                         placeholder="Password"
-                        className="w-full p-2 border rounded"
+                        className="w-full p-2 border rounded bg-white/20 backdrop-blur-md text-black dark:text-white placeholder-gray-400"
                     />
 
-                    <Button className="w-full bg-red-600 text-white py-2 rounded">
+                    <Button className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">
                         {authType === "login" ? "Login" : "Sign Up"}
                     </Button>
                 </form>
@@ -59,8 +71,8 @@ const Form = ({ closeForm, initialAuthType }) => {
                 {/* Toggle between login and signup */}
                 <p className="mt-4 text-center text-sm text-gray-500">
                     {authType === "login" ? "Don't have an account?" : "Already have an account?"}{" "}
-                    <button 
-                        onClick={() => setAuthType(authType === "login" ? "signup" : "login")} 
+                    <button
+                        onClick={() => setAuthType(authType === "login" ? "signup" : "login")}
                         className="text-red-600 font-bold hover:underline"
                     >
                         {authType === "login" ? "Sign up" : "Login"}

@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import clsx from "clsx";
 import { Shapes } from "@/components/ui/Shaps";
+import { Star } from "@/components/ui/Star";
 
 const steps = [
     { title: "Register", desc: "Sign up and create your profile in minutes." },
@@ -28,12 +29,6 @@ const Devices: React.FC = () => {
 
             {/* Steps & Image */}
             <div className="relative flex flex-col md:flex-row items-center justify-around gap-12">
-                
-                {/* شكل دوار في الخلفية */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 animate-[spin_10s_linear_infinite]">
-                    <Shapes className="w-24 h-24 md:w-32 md:h-32" />
-                </div>
-
                 {/* Step List Left */}
                 <StepList steps={steps} animation="fade-right" />
 
@@ -45,25 +40,29 @@ const Devices: React.FC = () => {
                             alt="App Demo"
                             width={500}
                             height={500}
-                            className="w-full rounded-xl transform transition-transform duration-500 hover:scale-105"
+                            className="w-full rounded-xl transform transition-transform duration-500 hover:scale-105 "
                         />
                     </div>
 
-                    {/* شكل يدور حول نفسه */}
-                    <div className="absolute top-[-40px] left-[-40px] opacity-80 animate-[spin_6s_linear_infinite]">
-                        <Shapes className="w-12 h-12 md:w-16 md:h-16" />
+                    {/* ⭐️ النجوم المعدلة ⭐️ */}
+                    <div className="absolute top-[-30%] left-[10%] opacity-80 animate-[spin_6s_linear_infinite]">
+                        <Star className="w-10 h-10 md:w-14 md:h-14" />
+                    </div>
+                    <div className="absolute top-[10%] right-[-25%] opacity-80 animate-[spin_6s_linear_infinite]">
+                        <Star className="w-12 h-12 md:w-16 md:h-16" />
+                    </div>
+                    <div className="absolute bottom-[20%] left-[-50%] opacity-80 animate-[spin_6s_linear_infinite]">
+                        <Star className="w-8 h-8 md:w-12 md:h-12" />
                     </div>
                 </div>
 
                 {/* Step List Right */}
                 <StepList steps={steps} animation="fade-left" />
 
-                {/* شكل صغير عائم في الأسفل */}
-                <div className="absolute bottom-5 left-16 opacity-80 animate-float">
+                {/* ⭐️ أشكال إضافية */}
+                <div className="absolute bottom-6 left-16 opacity-80 animate-float">
                     <Shapes className="w-8 h-8 md:w-12 md:h-12" />
                 </div>
-
-                {/* شكل صغير عائم في الأعلى */}
                 <div className="absolute top-5 right-16 opacity-80 animate-float">
                     <Shapes className="w-10 h-10 md:w-14 md:h-14" />
                 </div>

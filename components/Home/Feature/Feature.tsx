@@ -46,25 +46,29 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ feature, index }) => {
     const invertedBorder = index % 2 === 1; // كل كارت ثاني يكون له حدود معكوسة
 
     return (
-        <div
-            className={clsx(
-                "relative flex flex-col items-center text-center w-[300px] h-[350px] p-6 rounded-2xl shadow-lg transition-transform hover:scale-105",
-                "backdrop-blur-lg bg-white/10 border border-white/20 text-white",
-                invertedBorder && "border-white bg-white/5"
-            )}
-        >
-            <div className="w-20 h-20 flex items-center justify-center mb-8">
-                <Image src={feature.icon} alt={feature.title} width={80} height={80} className="object-contain" />
+        <section>
+
+            <div
+                className={clsx(
+                    "relative flex flex-col items-center text-center w-[300px] h-[350px] p-6 rounded-2xl shadow-lg transition-transform hover:scale-105",
+                    "backdrop-blur-lg bg-white/10 border border-white/20 text-white",
+                    invertedBorder && "border-white bg-white/5"
+                )}
+            >
+                <div className="w-20 h-20 flex items-center justify-center mb-8">
+                    <Image src={feature.icon} alt={feature.title} width={80} height={80} className="object-contain" />
+                </div>
+                <h5 className="text-xl font-bold text-red-400 mb-2">{feature.title}</h5>
+                <p className="text-gray-300 text-sm mt-1 mb-4 px-3">{feature.description}</p>
+                <button className="px-5 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-500 transition-all mt-auto">
+                    Learn More
+                </button>
+                <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                    NEW
+                </div>
             </div>
-            <h5 className="text-xl font-bold text-red-400 mb-2">{feature.title}</h5>
-            <p className="text-gray-300 text-sm mt-1 mb-4 px-3">{feature.description}</p>
-            <button className="px-5 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-500 transition-all mt-auto">
-                Learn More
-            </button>
-            <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
-                NEW
-            </div>
-        </div>
+
+        </section>
     );
 };
 
