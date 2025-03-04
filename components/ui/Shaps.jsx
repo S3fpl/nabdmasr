@@ -1,0 +1,48 @@
+import React from "react";
+
+export const Shapes = (props) => (
+    <svg
+        className="coolshapes triangle-9"
+        height="400"
+        width="400"
+        fill="none"
+        viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+    >
+        <g clipPath="url(#cs_clip_1_triangle-9)">
+            <mask
+                height="200"
+                id="cs_mask_1_triangle-9"
+                style={{ maskType: "alpha" }}
+                width="200"
+                x="0"
+                y="0"
+                maskUnits="userSpaceOnUse"
+            >
+                <path
+                    d="M118.01 77.99c3.32-3.32 4.981-4.98 5.881-6.964a11.994 11.994 0 001.073-5.128c-.03-2.178-.886-4.365-2.597-8.738L100 0 77.633 57.16c-1.711 4.373-2.567 6.56-2.597 8.737a12 12 0 001.073 5.13c.9 1.982 2.56 3.643 5.881 6.963l13.428 13.428c1.638 1.637 2.456 2.456 3.406 2.748a4.001 4.001 0 002.353 0c.949-.292 1.768-1.11 3.405-2.748L118.01 77.99zM118.01 122.01c3.32 3.32 4.981 4.981 5.881 6.964a11.991 11.991 0 011.073 5.128c-.03 2.178-.886 4.365-2.597 8.738L100 200l-22.367-57.16c-1.711-4.373-2.567-6.56-2.597-8.738a11.997 11.997 0 011.073-5.128c.9-1.983 2.56-3.644 5.881-6.964l13.428-13.428c1.638-1.637 2.456-2.456 3.406-2.748a3.998 3.998 0 012.353 0c.949.292 1.768 1.111 3.405 2.748l13.428 13.428zM200 100l-57.16 22.367c-4.373 1.711-6.56 2.567-8.738 2.597a11.991 11.991 0 01-5.128-1.073c-1.983-.9-3.644-2.561-6.964-5.881l-13.428-13.428c-1.637-1.637-2.456-2.456-2.748-3.405a3.998 3.998 0 010-2.353c.292-.95 1.111-1.768 2.748-3.406L122.01 81.99c3.32-3.32 4.981-4.98 6.964-5.881a11.997 11.997 0 015.128-1.073c2.178.03 4.365.886 8.738 2.597L200 100zM77.99 118.01c-3.32 3.32-4.98 4.981-6.964 5.881a11.994 11.994 0 01-5.128 1.073c-2.178-.03-4.365-.886-8.738-2.597L0 100l57.16-22.367c4.373-1.711 6.56-2.567 8.737-2.597a12 12 0 015.13 1.073c1.982.9 3.643 2.56 6.963 5.881l13.428 13.428c1.637 1.638 2.456 2.456 2.748 3.406a4.001 4.001 0 010 2.353c-.292.949-1.11 1.768-2.748 3.405L77.99 118.01z"
+                    fill="#fff"
+                />
+            </mask>
+            <g mask="url(#cs_mask_1_triangle-9)">
+                <rect width="200" height="200" fill="#ff0000" />
+                <rect width="200" height="200" fill="url(#paint0_radial)" />
+                <rect width="200" height="200" fill="url(#paint1_radial)" />
+            </g>
+        </g>
+        <defs>
+            <radialGradient id="paint0_radial" cx="0" cy="0" gradientTransform="rotate(45) scale(200)" r="1">
+                <stop stopColor="#ff4d4d" />
+                <stop offset="1" stopColor="#ff0000" stopOpacity="0.6" />
+            </radialGradient>
+            <radialGradient id="paint1_radial" cx="0" cy="0" gradientTransform="rotate(-45) scale(200)" r="1">
+                <stop stopColor="#ff6666" />
+                <stop offset="1" stopColor="#cc0000" stopOpacity="0.5" />
+            </radialGradient>
+            <clipPath id="cs_clip_1_triangle-9">
+                <path d="M0 0H200V200H0z" fill="#fff" />
+            </clipPath>
+        </defs>
+    </svg>
+);
