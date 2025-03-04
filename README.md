@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NabdMasr - Blood Bank Website
 
-## Getting Started
+## Overview
 
-First, run the development server:
+NabdMasr is a modern and user-friendly blood bank website designed to streamline blood donation and requests. Built using cutting-edge web technologies, the platform ensures accessibility, efficiency, and ease of use for donors, recipients, and administrators.
 
-```bash
+## Features
+
+- **User Registration & Authentication**: Secure authentication system for donors and requesters.
+- **Blood Donation Requests**: Users can request blood based on type and location.
+- **Donor Database**: A well-structured database of donors categorized by blood type and location.
+- **Real-Time Availability**: Live updates on blood stock availability.
+- **Notifications & Alerts**: Email and SMS notifications for urgent blood requests.
+- **Dark & Light Mode Support**: Aesthetic and user-friendly interface with theme toggling.
+- **Mobile Responsive Design**: Fully optimized for all screen sizes.
+
+## Tech Stack
+
+NabdMasr leverages a powerful tech stack to deliver a seamless experience:
+
+- **Next.js**: For fast and scalable server-side rendering.
+- **Tailwind CSS**: For highly customizable styling.
+- **Shadcn/UI**: To enhance UI/UX with pre-built components.
+- **ReactBits**: For efficient state management and reusable UI patterns.
+- **Tailwind UI**: To accelerate design with high-quality UI components.
+- **MySQL**: For managing donor and request data.
+- **PHP (Backend API)**: To handle requests, authentication, and database interactions.
+
+## Installation
+
+To set up NabdMasr locally, follow these steps:
+
+```sh
+# Clone the repository
+git clone https://github.com/yourusername/nabdmasr.git
+cd nabdmasr
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## File Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/nabdmasr
+│── app/
+│   ├── layout.js      # Global layout
+│   ├── page.js        # Main page component
+│── components/        # Reusable UI components
+│── public/            # Static assets
+│── styles/           # Global styles (Tailwind)
+│── utils/            # Helper functions
+│── config/           # Project configurations
+│── Postcss.congig.mjs           # Postcss configurations
+│── tailwind.config.mjs # Tailwind CSS configuration
+│── package.json       # Dependencies and scripts
+```
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Feel free to fork the repo, create a branch, and submit a pull request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+git checkout -b feature-branch
+git commit -m "Your feature description"
+git push origin feature-branch
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is open-source and available under the MIT License.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🌐 #نبض*مصر | #تبرع*بدمك | #أنقذ_حياة
