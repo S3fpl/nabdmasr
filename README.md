@@ -1,4 +1,3 @@
-![NabdMasr Logo](./public/logo.ico)
 # NabdMasr - Blood Bank Website
 ![NabdMasr Logo](./public/nabd-masr.png)
 ## Overview
@@ -78,4 +77,5 @@ This project is open-source and available under the MIT License.
 
 ---
 
+![NabdMasr Logo](./public/logo.ico)
 🌐 #نبض*مصر | #تبرع*بدمك | #أنقذ_حياة
