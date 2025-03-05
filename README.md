@@ -1,4 +1,5 @@
-![NabdMasr Logo](./public/nabdmasr.ico)# NabdMasr - Blood Bank Website
+![NabdMasr Logo](./public/logo.ico)
+# NabdMasr - Blood Bank Website
 ![NabdMasr Logo](./public/nabd-masr.png)
 ## Overview
 
