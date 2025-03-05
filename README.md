@@ -1,5 +1,5 @@
 # NabdMasr - Blood Bank Website
-
+![NabdMasr Logo](./public/nabd-masr.png)
 ## Overview
 
 NabdMasr is a modern and user-friendly blood bank website designed to streamline blood donation and requests. Built using cutting-edge web technologies, the platform ensures accessibility, efficiency, and ease of use for donors, recipients, and administrators.
