@@ -55,6 +55,11 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            
+            {/* Copyright Section */}
+            <div className="text-center text-white text-sm mt-8 border-t border-white/20 pt-4">
+                <p>© 2025 Nabd Masr. All rights reserved. <a href="/COPYRIGHT.txt" className="hover:text-gray-300">Copyright</a></p>
+            </div>
         </footer>
     );
 };
