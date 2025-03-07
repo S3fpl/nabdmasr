@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import clsx from "clsx";
 import { Shapes } from "@/components/ui/Shaps";
-import { Star } from "@/components/ui/Star";
 const About = () => {
     useEffect(() => {
         AOS.init({ duration: 1000, once: true });
@@ -22,16 +21,6 @@ const About = () => {
             <div className="absolute top-6 right-16 opacity-80 animate-float ">
                 <Shapes className="w-10 h-10 md:w-14 md:h-14" />
             </div>
-            <div className=" blur absolute bottom-[12%] right-[5%] opacity-80 animate-[spin_6s_linear_infinite] z-0">
-                <Star className="w-10 h-10 md:w-20 md:h-20" />
-            </div>
-            <div className=" blur absolute bottom-[45%] left-[5%] opacity-80 animate-[spin_6s_linear_infinite] z-0">
-                <Star className="w-12 h-12 md:w-16 md:h-16" />
-            </div>
-            <div className=" blur absolute top-[6%] left-[40%] opacity-80 animate-[spin_6s_linear_infinite] z-0">
-                <Star className="w-8 h-8 md:w-24 md:h-24" />
-            </div>
-
 
 
             {/* Title */}

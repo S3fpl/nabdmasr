@@ -19,7 +19,7 @@ const Devices: React.FC = () => {
     }, []);
 
     return (
-        <section className="relative py-24 px-6 overflow-hidden">
+        <section className="relative py-24 px-6 overflow-hidden min-h-[700px] flex flex-col items-center">
             {/* Title */}
             <div className="text-center mb-16">
                 <h2 className="text-5xl font-extrabold text-white drop-shadow-lg" data-aos="fade-up">
@@ -28,19 +28,20 @@ const Devices: React.FC = () => {
             </div>
 
             {/* Steps & Image */}
-            <div className="relative flex flex-col md:flex-row items-center justify-around gap-12">
+            <div className="relative flex flex-col md:flex-row items-center justify-around gap-12 w-full">
                 {/* Step List Left */}
                 <StepList steps={steps} animation="fade-right" />
 
                 {/* iPhone Image + Animated Shapes */}
-                <div className="relative z-10 flex items-center justify-center">
+                <div className="relative z-10 flex items-center justify-center min-h-[300px]">
                     <div data-aos="zoom-in" className="relative w-56 sm:w-64 md:w-72">
                         <Image
                             src="/iphone.png"
                             alt="App Demo"
-                            width={500}
-                            height={500}
-                            className="w-full rounded-xl transform transition-transform duration-500 hover:scale-105 "
+                            width={300}
+                            height={600}
+                            priority
+                            className="w-full h-auto rounded-xl transform transition-transform duration-500 hover:scale-105"
                         />
                     </div>
 
@@ -57,10 +58,10 @@ const Devices: React.FC = () => {
                 <StepList steps={steps} animation="fade-left" />
 
                 {/* ⭐️ أشكال إضافية */}
-                <div className="absolute -bottom-5 left-16 sm:bottom-5 sm:left-16 opacity-80 animate-float">
+                <div className="absolute -bottom-5 left-16 sm:bottom-4 sm:left-16 opacity-80 animate-float">
                     <Shapes className="w-10 h-10 md:w-14 md:h-14" />
                 </div>
-                <div className="absolute -top-5 right-16 sm:top-5 sm:right-16 opacity-80 animate-float">
+                <div className="absolute -top-5 right-16 sm:top-4 sm:right-16 opacity-80 animate-float">
                     <Shapes className="w-10 h-10 md:w-14 md:h-14" />
                 </div>
             </div>
@@ -97,7 +98,7 @@ const GlassCard: React.FC<GlassCardProps> = ({ children, animation }) => (
     <div
         data-aos={animation}
         className={clsx(
-            "w-80 p-6 rounded-2xl shadow-lg backdrop-blur-xl border border-white/10 transition-transform duration-300",
+            "w-80 min-h-[120px] p-6 rounded-2xl shadow-lg backdrop-blur-xl border border-white/10 transition-transform duration-300",
             "bg-gray-900/40 hover:scale-105 hover:shadow-2xl"
         )}
     >

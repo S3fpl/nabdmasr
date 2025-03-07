@@ -15,11 +15,10 @@
   background: #dc2626;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b91c1c; 
+  background: #b91c1c;
 }
 
-body, html {
+body,
+html {
   overflow-x: hidden;
 }
-
-

@@ -14,7 +14,7 @@ const Hero = () => {
     const [animationData, setAnimationData] = useState(null);
 
     useEffect(() => {
-        AOS.init({ duration: 1000, once: true }); // تشغيل AOS مرة واحدة فقط
+        AOS.init({ duration: 1000, once: true });
 
         fetch("/blood-donation.json")
             .then((res) => res.json())
@@ -35,16 +35,14 @@ const Hero = () => {
 
     return (
         <section className="w-[90%] min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 mx-auto relative transition-all duration-500">
-            {/* نجوم التحريك */}
-            <div className="absolute top-[400px] left-[40px] opacity-80 animate-[spin_6s_linear_infinite]">
+            <div className="absolute top-[400px] left-[40px] opacity-80 animate-spin-slow">
                 <Star className="w-12 h-12 md:w-16 md:h-16" />
             </div>
-            <div className="absolute top-[200px] left-[450px] opacity-80 animate-[spin_6s_linear_infinite]">
+            <div className="absolute top-[200px] left-[450px] opacity-80 animate-spin-slow">
                 <Star className="w-12 h-12 md:w-16 md:h-16" />
             </div>
 
-            {/* نص المقدمة */}
-            <div className="md:w-1/2 space-y-6 text-center md:text-left">
+            <div className="md:w-1/2 space-y-6 text-center md:text-left min-h-[300px]">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-red-500 drop-shadow-lg" data-aos="fade-down">
                     Nabd Masr
                 </h1>
@@ -67,34 +65,20 @@ const Hero = () => {
                 </button>
             </div>
 
-            {/* قسم التحريك */}
             <motion.aside
-                initial={{ opacity: 0, scale: 0.9, }}
-                animate={{ opacity: 0.6, scale: 1}}
-                transition={{
-                    opacity: { duration: 0.8, ease: "easeOut" },
-                    y: { duration: 3, ease: "easeInOut", repeat: Infinity },
-                }}
-                whileHover={{
-                    scale: 1.02,
-                    rotate: 1.5,
-                    borderColor: "white",
-                    opacity: 1,
-                    transition: { duration: 0.3 },
-                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                whileHover={{ scale: 1.02, rotate: 1.5, opacity: 1, transition: { duration: 0.3 } }}
                 whileTap={{ scale: 0.95 }}
-                className="relative md:w-1/2 flex justify-center backdrop-blur-lg bg-white/10 border border-white rounded-xl shadow-xl w-4/5"
+                className="relative md:w-1/2 flex justify-center backdrop-blur-lg bg-white/10 border border-white rounded-xl shadow-xl w-4/5 min-h-[350px]"
             >
-                {/* Shapes - Top Right */}
                 <div className="absolute -top-7 -right-7 sm:-top-8 sm:-right-8 opacity-80 animate-float z-[9999] pointer-events-none">
                     <Shapes className="w-14 h-14 md:w-16 md:h-16" />
                 </div>
-
-                {/* Shapes - Bottom Left */}
                 <div className="absolute -bottom-7 -left-7 sm:-bottom-8 sm:-left-8 opacity-80 animate-float z-[9999] pointer-events-none">
                     <Shapes className="w-14 h-14 md:w-16 md:h-16" />
                 </div>
-
                 <Lottie animationData={animationData} className="w-[60%] md:w-[75%] max-w-lg drop-shadow-xl" />
             </motion.aside>
         </section>

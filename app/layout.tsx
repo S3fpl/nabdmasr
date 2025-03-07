@@ -5,6 +5,7 @@ import ResponsivNav from "@/components/Home/Navbar/ResponsivNav";
 const font = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {
