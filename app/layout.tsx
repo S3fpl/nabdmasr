@@ -21,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="uHv9NSBGxuAfKhQbOpTqsUjCnc12mXw8p4RSN_IpFpM" />
       <body className={`${font.className} bg-gray-950 antialiased relative overflow-hidden`}>
         {/* ✅ فقاعات متحركة في الخلفية لجميع الصفحات */}
         <div className=" fixed inset-0 -z-10 overflow-hidden pointer-events-none">
