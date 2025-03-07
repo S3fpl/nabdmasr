@@ -34,7 +34,6 @@ const Stats: React.FC = () => {
                 <Star className="w-8 h-8 md:w-12 md:h-12" />
             </div>
 
-            {/* ✅ الكروت */}
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 relative z-10">
                 {statsData.map((stat, index) => (
                     <StatCard 
@@ -68,17 +67,18 @@ const StatCard: React.FC<StatCardProps> = ({ value, label, delay, isFirst, isLas
                 "group relative flex items-center justify-center gap-4 py-6 px-8 rounded-xl shadow-md",
                 "transition-all duration-300 hover:scale-110 hover:rotate-2 active:scale-95",
                 "opacity-80 hover:opacity-100 transition-opacity ease-in-out duration-300",
-                "backdrop-blur-lg bg-white/10 border border-white/20 text-white text-center"
+                "backdrop-blur-lg bg-white/10 border border-white/20 text-white text-center",
+                "w-full sm:w-auto"
             )}
         >
-            {/* 💠 الأشكال - تظهر فقط لأول وآخر كارت */}
+
             {isFirst && (
-                <div className="absolute -top-6 left-6 opacity-90 animate-float z-10 pointer-events-none">
+                <div className="absolute -top-5 left-4 sm:-top-6 opacity-90 animate-float pointer-events-none">
                     <Shapes className="w-10 h-10 md:w-12 md:h-12" />
                 </div>
             )}
             {isLast && (
-                <div className="absolute -bottom-6 right-6 opacity-90 animate-float z-10 pointer-events-none">
+                <div className="absolute -bottom-5 right-6 sm:-bottom-6 opacity-90 animate-float z-10 pointer-events-none">
                     <Shapes className="w-10 h-10 md:w-12 md:h-12" />
                 </div>
             )}
