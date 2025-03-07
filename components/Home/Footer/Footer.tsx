@@ -24,7 +24,7 @@ const Footer = () => {
 
             <div className="container mx-auto flex flex-col md:flex-row items-start justify-between px-6 gap-8">
                 {/* Logo Section */}
-                <div className="flex items-center space-x-4 w-full md:w-auto justify-start">
+                <div className="flex items-center space-x-4 w-full md:w-auto justify-start mr-24">
                     <Image src="/logo.ico" alt="Logo" width={64} height={64} />
                     <h2 className="text-white text-2xl font-semibold">NabdMasr</h2>
                 </div>

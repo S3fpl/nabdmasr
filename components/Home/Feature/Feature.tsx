@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
-
+import { Star } from "@/components/ui/Star";
 type FeatureType = {
     title: string;
     description: string;
@@ -16,7 +16,7 @@ const features: FeatureType[] = [
 
 const FeatureSection: React.FC = () => {
     return (
-        <section className="w-[90%] mx-auto flex flex-col gap-16 py-16">
+        <section className="w-[90%] mx-auto flex flex-col gap-16 py-16 relative">
             <div className="text-center flex flex-col items-center">
                 <h2 className="text-4xl font-extrabold text-white border-b-4 border-red-600 pb-2">
                     Our Features
@@ -33,6 +33,15 @@ const FeatureSection: React.FC = () => {
                     ))}
                 </div>
             </div>
+            <div className="absolute blur bottom-[32%] left-[12%] opacity-80 animate-[spin_6s_linear_infinite]">
+                <Star className="w-10 h-10 md:w-14 md:h-14" />
+            </div>
+            <div className="absolute blur bottom-[15%] right-[12%] opacity-80 animate-[spin_6s_linear_infinite]">
+                <Star className="w-12 h-12 md:w-16 md:h-16" />
+            </div>
+            <div className="absolute blur top-[44%] left-[40%] opacity-80 animate-[spin_6s_linear_infinite]">
+                <Star className="w-8 h-8 md:w-24 md:h-24" />
+            </div>
         </section>
     );
 };
@@ -47,7 +56,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ feature, index }) => {
 
     return (
         <section>
-
+            
             <div
                 className={clsx(
                     "relative flex flex-col items-center text-center w-[300px] h-[350px] p-6 rounded-2xl shadow-lg transition-transform hover:scale-105",

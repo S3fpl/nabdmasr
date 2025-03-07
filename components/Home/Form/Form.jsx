@@ -21,15 +21,15 @@ const Form = ({ closeForm, initialAuthType }) => {
     return (
         <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0"}`}>
 
-            <div className={`relative w-96 p-6 rounded-lg shadow-lg backdrop-blur-lg bg-white/10 dark:bg-gray-900/20 border border-white/20 transform transition-transform duration-300 ${animate ? "scale-100" : "scale-90"}`}>
+            <div className={`relative w-5/6 sm:w-96 p-6 rounded-lg shadow-lg backdrop-blur-lg bg-white/10 dark:bg-gray-900/20 border border-white/20 transform transition-transform duration-300 ${animate ? "scale-100" : "scale-90"}`}>
 
                 {/* Shapes - Top Right */}
-                <div className="absolute -top-8 -right-8 opacity-80 animate-float z-[9999] pointer-events-none">
+                <div className="absolute -top-7 -right-7 sm:-top-8 sm:-right-8 opacity-80 animate-float z-[9999] pointer-events-none">
                     <Shapes className="w-14 h-14 md:w-16 md:h-16" />
                 </div>
 
                 {/* Shapes - Bottom Left */}
-                <div className="absolute -bottom-8 -left-8 opacity-80 animate-float z-[9999]">
+                <div className="absolute -bottom-7 -left-7 sm:-bottom-8 sm:-left-8 opacity-80 animate-float z-[9999]">
                     <Shapes className="w-14 h-14 md:w-16 md:h-16" />
                 </div>
 
@@ -44,7 +44,7 @@ const Form = ({ closeForm, initialAuthType }) => {
                     {authType === "login" ? "Login" : "Sign Up"}
                 </h2>
 
-                <form className="space-y-4">
+                <form className="space-y-4 ">
                     {authType === "signup" && (
                         <input
                             type="text"

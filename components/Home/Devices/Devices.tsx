@@ -45,9 +45,6 @@ const Devices: React.FC = () => {
                     </div>
 
                     {/* ⭐️ النجوم المعدلة ⭐️ */}
-                    <div className="absolute top-[-30%] left-[10%] opacity-80 animate-[spin_6s_linear_infinite]">
-                        <Star className="w-10 h-10 md:w-14 md:h-14" />
-                    </div>
                     <div className="absolute top-[10%] right-[-25%] opacity-80 animate-[spin_6s_linear_infinite]">
                         <Star className="w-12 h-12 md:w-16 md:h-16" />
                     </div>
@@ -60,10 +57,10 @@ const Devices: React.FC = () => {
                 <StepList steps={steps} animation="fade-left" />
 
                 {/* ⭐️ أشكال إضافية */}
-                <div className="absolute bottom-6 left-16 opacity-80 animate-float">
-                    <Shapes className="w-8 h-8 md:w-12 md:h-12" />
+                <div className="absolute -bottom-5 left-16 sm:bottom-5 sm:left-16 opacity-80 animate-float">
+                    <Shapes className="w-10 h-10 md:w-14 md:h-14" />
                 </div>
-                <div className="absolute top-5 right-16 opacity-80 animate-float">
+                <div className="absolute -top-5 right-16 sm:top-5 sm:right-16 opacity-80 animate-float">
                     <Shapes className="w-10 h-10 md:w-14 md:h-14" />
                 </div>
             </div>

@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Star } from "@/components/ui/Star";
 
 // تعريف نوع Props الخاص بزر التحميل
 type DownloadButtonProps = {
@@ -34,6 +35,17 @@ const Download: React.FC = () => {
 
     return (
         <section className="w-full flex flex-col items-center justify-center py-16">
+
+            <div className="absolute bottom-[12%] left-[5%] opacity-80 animate-[spin_6s_linear_infinite]">
+                <Star className="w-10 h-10 md:w-14 md:h-14" />
+            </div>
+            <div className="absolute bottom-[15%] right-[5%] opacity-80 animate-[spin_6s_linear_infinite]">
+                <Star className="w-12 h-12 md:w-16 md:h-16" />
+            </div>
+            <div className="absolute bottom-[8%] left-[40%] opacity-80 animate-[spin_6s_linear_infinite]">
+                <Star className="w-8 h-8 md:w-12 md:h-12" />
+            </div>
+
             {/* العنوان والنص */}
             <div className="text-center" data-aos="fade-up">
                 <h2 className="text-5xl font-extrabold text-white drop-shadow-md mb-8">
@@ -60,7 +72,7 @@ const Download: React.FC = () => {
                 <DownloadButton
                     href="#"
                     icon={
-                        <svg className="w-5 h-5" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-9 h-5" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
                         </svg>
                     }
