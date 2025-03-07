@@ -59,7 +59,6 @@ const Footer = () => {
                         <ul className="flex space-x-4">
                             <li><a href="#" className="hover:text-gray-300"><FacebookIcon size={24} /></a></li>
                             <li><a href="#" className="hover:text-gray-300"><InstagramIcon size={24} /></a></li>
-                            <li><a href="#" className="hover:text-gray-300"><InstagramIcon size={24} /></a></li>
                         </ul>
                     </div>
                 </div>
