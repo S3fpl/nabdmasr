@@ -69,8 +69,8 @@ const Hero = () => {
 
             {/* قسم التحريك */}
             <motion.aside
-                initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                animate={{ opacity: 0.6, scale: 1, y: [0, -10, 0] }}
+                initial={{ opacity: 0, scale: 0.9, }}
+                animate={{ opacity: 0.6, scale: 1}}
                 transition={{
                     opacity: { duration: 0.8, ease: "easeOut" },
                     y: { duration: 3, ease: "easeInOut", repeat: Infinity },
