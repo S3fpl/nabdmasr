@@ -96,7 +96,7 @@ const Hero = () => {
                     transition: { duration: 0.3 },
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative md:w-1/2 flex justify-center backdrop-blur-lg bg-white/10 border border-white rounded-xl shadow-xl "
+                className="relative md:w-1/2 flex justify-center backdrop-blur-lg bg-white/10 border border-white rounded-xl shadow-xl w-4/5"
             >
                 {/* Shapes - Top Right */}
                 <div className="absolute  -top-7 -right-7 sm:-top-8 sm:-right-8 opacity-80 animate-float z-[9999] pointer-events-none">
@@ -108,7 +108,7 @@ const Hero = () => {
                     <Shapes className="w-14 h-14 md:w-16 md:h-16" />
                 </div>
 
-                <Lottie animationData={animationData} className="w-[65%] md:w-[75%] max-w-lg drop-shadow-xl" />
+                <Lottie animationData={animationData} className="w-[60%] md:w-[75%] max-w-lg drop-shadow-xl" />
             </motion.aside>
 
 
