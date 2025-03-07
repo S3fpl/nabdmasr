@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { Shapes } from "@/components/ui/Shaps";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
 
@@ -58,7 +59,7 @@ const Footer = () => {
             
             {/* Copyright Section */}
             <div className="text-center text-white text-sm mt-8 border-t border-white/20 pt-4">
-                <p>© 2025 Nabd Masr. All rights reserved. <a href="/COPYRIGHT.txt" className="hover:text-gray-300">Copyright</a></p>
+                <p>© 2025 Nabd Masr. All rights reserved. <Link href="/copyright" className="hover:text-gray-300">Copyright</Link></p>
             </div>
         </footer>
     );

@@ -10,12 +10,6 @@ import { Star } from "@/components/ui/Star";
 const About = () => {
     useEffect(() => {
         AOS.init({ duration: 1000, once: true });
-
-        const interval = setInterval(() => {
-            AOS.refresh();
-        }, 2000);
-
-        return () => clearInterval(interval);
     }, []);
 
     return (
