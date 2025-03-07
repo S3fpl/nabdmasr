@@ -6,37 +6,20 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import { Shapes } from "@/components/ui/Shaps";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import { Star } from "@/components/ui/Star";
 
 const Hero = () => {
     const [animationData, setAnimationData] = useState(null);
-    const { theme, setTheme } = useTheme();
-    const darkMode = theme === "dark";
 
     useEffect(() => {
-        let isMounted = true;
-
-        AOS.init({ duration: 1000, delay: 300 });
-
-        const refreshAOS = () => {
-            if (isMounted) {
-                AOS.refresh();
-                requestAnimationFrame(refreshAOS);
-            }
-        };
-        requestAnimationFrame(refreshAOS);
+        AOS.init({ duration: 1000, once: true }); // تشغيل AOS مرة واحدة فقط
 
         fetch("/blood-donation.json")
             .then((res) => res.json())
-            .then((data) => isMounted && setAnimationData(data))
+            .then((data) => setAnimationData(data))
             .catch((err) => console.error("Error loading animation:", err));
-
-        return () => {
-            isMounted = false;
-        };
     }, []);
 
     if (!animationData)
@@ -52,13 +35,15 @@ const Hero = () => {
 
     return (
         <section className="w-[90%] min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 mx-auto relative transition-all duration-500">
-            {/* نص المقدمة */}
+            {/* نجوم التحريك */}
             <div className="absolute top-[400px] left-[40px] opacity-80 animate-[spin_6s_linear_infinite]">
                 <Star className="w-12 h-12 md:w-16 md:h-16" />
             </div>
             <div className="absolute top-[200px] left-[450px] opacity-80 animate-[spin_6s_linear_infinite]">
                 <Star className="w-12 h-12 md:w-16 md:h-16" />
             </div>
+
+            {/* نص المقدمة */}
             <div className="md:w-1/2 space-y-6 text-center md:text-left">
                 <h1 className="text-4xl md:text-6xl font-extrabold text-red-500 drop-shadow-lg" data-aos="fade-down">
                     Nabd Masr
@@ -73,7 +58,7 @@ const Hero = () => {
                 <button
                     className={clsx(
                         "mt-6 px-8 py-3 rounded-full font-bold transition-all duration-500 shadow-lg",
-                        "backdrop-blur-lg bg-white/10 border border-white/20 hover:text-white text-gray-300 transition duration-300 opacity-80 hover:opacity-100",
+                        "backdrop-blur-lg bg-white/10 border border-white/20 hover:text-white text-gray-300",
                         "hover:bg-white/20 hover:scale-105 focus:ring focus:ring-white/30 active:scale-95"
                     )}
                     data-aos="zoom-in"
@@ -81,12 +66,14 @@ const Hero = () => {
                     Get Started
                 </button>
             </div>
+
+            {/* قسم التحريك */}
             <motion.aside
-                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
                 animate={{ opacity: 0.6, scale: 1, y: [0, -10, 0] }}
                 transition={{
                     opacity: { duration: 0.8, ease: "easeOut" },
-                    y: { duration: 3, ease: "easeInOut", repeat: Infinity }
+                    y: { duration: 3, ease: "easeInOut", repeat: Infinity },
                 }}
                 whileHover={{
                     scale: 1.02,
@@ -99,7 +86,7 @@ const Hero = () => {
                 className="relative md:w-1/2 flex justify-center backdrop-blur-lg bg-white/10 border border-white rounded-xl shadow-xl w-4/5"
             >
                 {/* Shapes - Top Right */}
-                <div className="absolute  -top-7 -right-7 sm:-top-8 sm:-right-8 opacity-80 animate-float z-[9999] pointer-events-none">
+                <div className="absolute -top-7 -right-7 sm:-top-8 sm:-right-8 opacity-80 animate-float z-[9999] pointer-events-none">
                     <Shapes className="w-14 h-14 md:w-16 md:h-16" />
                 </div>
 
@@ -110,10 +97,6 @@ const Hero = () => {
 
                 <Lottie animationData={animationData} className="w-[60%] md:w-[75%] max-w-lg drop-shadow-xl" />
             </motion.aside>
-
-
-
-
         </section>
     );
 };

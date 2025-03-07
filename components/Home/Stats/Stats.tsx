@@ -17,7 +17,7 @@ const statsData = [
 const Stats: React.FC = () => {
     useEffect(() => {
         setTimeout(() => {
-            AOS.init({ duration: 1000 });
+            AOS.init({ duration: 1000, once: true });
         }, 300);
     }, []);
 

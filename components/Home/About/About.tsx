@@ -9,7 +9,7 @@ import { Shapes } from "@/components/ui/Shaps";
 import { Star } from "@/components/ui/Star";
 const About = () => {
     useEffect(() => {
-        AOS.init({ duration: 800 });
+        AOS.init({ duration: 1000, once: true });
 
         const interval = setInterval(() => {
             AOS.refresh();

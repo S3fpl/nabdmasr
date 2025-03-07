@@ -1,17 +1,9 @@
 "use client";
-
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Image from "next/image";
 import { Shapes } from "@/components/ui/Shaps";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
 
 const Footer = () => {
-    useEffect(() => {
-        AOS.init({ duration: 800, once: true });
-    }, []);
-
     return (
         <footer className="w-full relative z-10 backdrop-blur-lg bg-white/10 py-12 mt-16 border-t border-white/20">
             {/* عنصر Shapes العائم */}
