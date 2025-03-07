@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { Shapes } from "@/components/ui/Shaps";
-import { TwitterIcon, FacebookIcon, InstagramIcon } from "lucide-react"; // استيراد الأيقونات الصحيحة
+import { FacebookIcon, InstagramIcon } from "lucide-react";
 
 const Footer = () => {
     useEffect(() => {
@@ -57,8 +57,8 @@ const Footer = () => {
                     <div className="w-full sm:w-auto">
                         <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                         <ul className="flex space-x-4">
-                            <li><a href="#" className="hover:text-gray-300"><TwitterIcon size={24} /></a></li>
                             <li><a href="#" className="hover:text-gray-300"><FacebookIcon size={24} /></a></li>
+                            <li><a href="#" className="hover:text-gray-300"><InstagramIcon size={24} /></a></li>
                             <li><a href="#" className="hover:text-gray-300"><InstagramIcon size={24} /></a></li>
                         </ul>
                     </div>
