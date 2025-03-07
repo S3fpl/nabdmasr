@@ -93,7 +93,7 @@ const Hero = () => {
                     transition: { duration: 0.2 },
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative md:w-1/2 flex justify-center backdrop-blur-lg bg-white/10 border border-white rounded-xl shadow-xl cursor-none"
+                className="relative md:w-1/2 flex justify-center backdrop-blur-lg bg-white/10 border border-white rounded-xl shadow-xl "
             >
                 {/* Shapes - Top Right */}
                 <div className="absolute -top-8 -right-8 opacity-80 animate-float z-[9999] pointer-events-none">
