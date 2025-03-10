@@ -6,7 +6,7 @@ import { FacebookIcon, InstagramIcon } from "lucide-react";
 
 const Footer = () => {
     return (
-        <footer className="w-full relative z-10 backdrop-blur-lg bg-white/10 py-12 mt-16 border-t border-white/20">
+        <footer className="w-full relative z-10 backdrop-blur-lg bg-gray-600/10 py-12 mt-16 border-t border-white/20">
             {/* عنصر Shapes العائم */}
             <div className="absolute -top-5 left-6 sm:-top-6 opacity-90 animate-float z-10 pointer-events-none">
                 <Shapes className="w-10 h-10 md:w-12 md:h-12" />

@@ -5,7 +5,6 @@ import Feature from './Feature/Feature'
 import Devices from './Devices/Devices'
 import About from './About/About'
 import Download from './Download/Download'
-import Footer from './Footer/Footer'
 
 const Home = () => {
     return (
@@ -22,7 +21,6 @@ const Home = () => {
             <div className='my-28' />
             <Download />
             <div className='my-28' />
-            <Footer /> 
         </main>
     )
 }
