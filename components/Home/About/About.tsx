@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import clsx from "clsx";
 import { Shapes } from "@/components/ui/Shaps";
+import Link from "next/link";
 const About = () => {
     useEffect(() => {
         AOS.init({ duration: 1000, once: true });
@@ -58,7 +59,9 @@ const About = () => {
                         )}
                         data-aos="zoom-in"
                     >
+                        <Link href="/about">
                         Learn More
+                        </Link>
                     </button>
                 </div>
             </div>
