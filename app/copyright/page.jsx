@@ -9,7 +9,7 @@ export default function CopyrightPage() {
                     of any material from this site without permission is strictly prohibited.
                 </p>
                 <p className="mt-4">
-                    For permissions, contact: <a href="mailto:your@email.com" className="text-blue-400 hover:underline">nabdmasr.team@gmail.com</a>
+                    For permissions, contact: <a href="nabdmasr.team@gmail.com" className="text-blue-400 hover:underline">nabdmasr.team@gmail.com</a>
                 </p>
             </div>
         </div>
