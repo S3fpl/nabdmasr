@@ -27,31 +27,31 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Company</h3>
                         <ul>
-                            <li><a href="#" className="hover:text-gray-300">About Us</a></li>
-                            <li><a href="#" className="hover:text-gray-300">Careers</a></li>
-                            <li><a href="#" className="hover:text-gray-300">Press</a></li>
+                            <li><Link href="/about" className="hover:text-gray-300">About Us</Link></li>
+                            <li><Link href="#/ca" className="hover:text-gray-300">Careers</Link></li>
+                            <li><Link href="#" className="hover:text-gray-300">Press</Link></li>
                         </ul>
                     </div>
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Support</h3>
                         <ul>
-                            <li><a href="#" className="hover:text-gray-300">Help Center</a></li>
-                            <li><a href="#" className="hover:text-gray-300">FAQs</a></li>
-                            <li><a href="#" className="hover:text-gray-300">Contact Us</a></li>
+                            <li><Link href="#" className="hover:text-gray-300">Help Center</Link></li>
+                            <li><Link href="#" className="hover:text-gray-300">FAQs</Link></li>
+                            <li><Link href="#" className="hover:text-gray-300">Contact Us</Link></li>
                         </ul>
                     </div>
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Legal</h3>
                         <ul>
-                            <li><a href="#" className="hover:text-gray-300">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-gray-300">Terms of Service</a></li>
+                            <li><Link href="#" className="hover:text-gray-300">Privacy Policy</Link></li>
+                            <li><Link href="#" className="hover:text-gray-300">Terms of Service</Link></li>
                         </ul>
                     </div>
                     <div className="w-full sm:w-auto">
                         <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                         <ul className="flex space-x-4">
-                            <li><a href="#" className="hover:text-gray-300"><FacebookIcon size={24} /></a></li>
-                            <li><a href="#" className="hover:text-gray-300"><InstagramIcon size={24} /></a></li>
+                            <li><Link href="" className="hover:text-gray-300"><FacebookIcon size={24} /></Link></li>
+                            <li><Link href="" className="hover:text-gray-300"><InstagramIcon size={24} /></Link></li>
                         </ul>
                     </div>
                 </div>

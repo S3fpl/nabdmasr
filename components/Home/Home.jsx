@@ -5,6 +5,8 @@ import Feature from './Feature/Feature'
 import Devices from './Devices/Devices'
 import About from './About/About'
 import Download from './Download/Download'
+import Contact from './Contact/Contact'
+
 
 const Home = () => {
     return (
@@ -19,8 +21,9 @@ const Home = () => {
             <div className='my-28' />
             <About />
             <div className='my-28' />
-            <Download />
+            <Contact />
             <div className='my-28' />
+            <Download />
         </main>
     )
 }
