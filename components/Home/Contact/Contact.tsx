@@ -26,7 +26,7 @@ const Contact = () => {
         {/* Right Side - Contact Form */}
         <div className="flex-1 max-w-sm w-full">
           <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-          <form className="space-y-3">
+          <form className="space-y-3" action="#" >
             <div>
               <label htmlFor="name" className="block mb-1">Name</label>
               <input
