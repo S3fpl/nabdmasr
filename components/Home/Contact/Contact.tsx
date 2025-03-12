@@ -22,9 +22,19 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus("Please fill in all fields")
+    // Enhanced validation
+    if (formData.name.length <= 3) {
+      setStatus("Name must be more than 3 characters")
+      return
+    }
+
+    if (!formData.email.includes("@") || !formData.email.endsWith(".com")) {
+      setStatus("Invalid email address. Must contain '@' and end with '.com'")
+      return
+    }
+
+    if (formData.message.length <= 10) {
+      setStatus("Message must be more than 10 characters")
       return
     }
 
@@ -76,9 +86,7 @@ const Contact: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
           <form className="space-y-3" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="block mb-1">
-                Name
-              </label>
+              <label htmlFor="name" className="block mb-1">Name</label>
               <input
                 type="text"
                 id="name"
@@ -91,9 +99,7 @@ const Contact: React.FC = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block mb-1">
-                Email
-              </label>
+              <label htmlFor="email" className="block mb-1">Email</label>
               <input
                 type="email"
                 id="email"
@@ -106,9 +112,7 @@ const Contact: React.FC = () => {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block mb-1">
-                Message
-              </label>
+              <label htmlFor="message" className="block mb-1">Message</label>
               <textarea
                 id="message"
                 value={formData.message}
@@ -142,4 +146,3 @@ const Contact: React.FC = () => {
 }
 
 export default Contact
-
