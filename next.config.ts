@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     EMAIL_USER: process.env.EMAIL_USER,
     EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
   },
+  images: {
+    domains: ["flowbite.com", "flowbite.s3.amazonaws.com"],
+  },
 };
 
 export default nextConfig;
