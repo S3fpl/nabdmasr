@@ -11,7 +11,6 @@ export default function CommentSection() {
   const [newComment, setNewComment] = useState("");
 
   useEffect(() => {
-    // تحديث التاريخ لكل تعليق على مستوى العميل
     const updatedComments = comments.map((comment) => ({
       ...comment,
       date: new Date().toLocaleString(),
@@ -24,7 +23,7 @@ export default function CommentSection() {
     if (newComment.trim()) {
       const newCommentObj = {
         text: newComment,
-        date: new Date().toLocaleString(), // التاريخ على مستوى العميل فقط
+        date: new Date().toLocaleString(),
       };
       setComments([newCommentObj, ...comments]);
       setNewComment("");
@@ -32,7 +31,7 @@ export default function CommentSection() {
   };
 
   return (
-    <section className="not-format">
+    <section className="not-format p-4">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg lg:text-2xl font-bold text-white">
           Discussion ({comments.length})
@@ -43,7 +42,7 @@ export default function CommentSection() {
           <label htmlFor="comment" className="sr-only">Your comment</label>
           <textarea
             id="comment"
-            rows={6}
+            rows={4}
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
             className="px-0 w-full text-sm text-white border-0 focus:ring-0 placeholder-gray-400 bg-transparent outline-none"
@@ -53,27 +52,27 @@ export default function CommentSection() {
         </div>
         <button
           type="submit"
-          className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-primary-800"
+          className="w-full sm:w-auto inline-flex items-center justify-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-primary-800"
         >
           Post comment
         </button>
       </form>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {comments.map((comment, index) => (
           <article
             key={index}
-            className="p-6 text-base bg-gray-900 bg-opacity-30 border border-gray-600 rounded-lg backdrop-blur-md shadow-md"
+            className="p-4 md:p-6 text-base bg-gray-900 bg-opacity-30 border border-gray-600 rounded-lg backdrop-blur-md shadow-md"
           >
             <footer className="flex justify-between items-center mb-2">
               <div className="flex items-center">
                 <p className="inline-flex items-center mr-3 font-semibold text-sm text-white">
                   <Image
-                    className="mr-2 w-6 h-6 rounded-full"
+                    className="mr-2 w-8 h-8 rounded-full"
                     src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                     alt="User"
-                    width={24}
-                    height={24}
+                    width={32}
+                    height={32}
                   />
                   User Name
                 </p>
