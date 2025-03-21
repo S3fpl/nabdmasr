@@ -1,22 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function CommentSection() {
   const [comments, setComments] = useState([
-    { text: "Very straight-to-point article. Really worth time reading. Thank you!", date: "" },
-    { text: "Loved the insights you shared!", date: "" },
-    { text: "Great read, keep it up!", date: "" },
-    { text: "Helpful and well-explained, thanks!", date: "" },
+    { text: "Very straight-to-point article. Really worth time reading. Thank you!", date: new Date().toLocaleString() },
+    { text: "Loved the insights you shared!", date: new Date().toLocaleString() },
+    { text: "Great read, keep it up!", date: new Date().toLocaleString() },
+    { text: "Helpful and well-explained, thanks!", date: new Date().toLocaleString() },
   ]);
   const [newComment, setNewComment] = useState("");
-
-  useEffect(() => {
-    const updatedComments = comments.map((comment) => ({
-      ...comment,
-      date: new Date().toLocaleString(),
-    }));
-    setComments(updatedComments);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

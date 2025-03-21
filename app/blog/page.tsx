@@ -4,7 +4,6 @@ import Image from 'next/image';
 import CommentSection from '@/components/layout/CommentSection/CommentSection';
 import Related from '@/components/layout/Related/Related';
 import Stats from '@/components/layout/Stats/Stats';
-
 const profiles = [
   {
     name: "Ahmed Eid",
@@ -29,18 +28,19 @@ const Blog = () => {
     <>
       <section className="w-[80%] mx-auto mt-20">
         <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 antialiased">
-          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 py-6 mx-auto max-w-screen-xl">
+          {/* PC Screen */}
+          <div className="hidden lg:grid gap-8 grid-cols-1 md:grid-cols-2 px-6 py-8 mx-auto max-w-screen-xl">
             {profiles.map((profile, index) => (
               <article
                 key={index}
                 className="mx-auto w-full format format-sm sm:format-base lg:format-lg format-blue dark:format-invert"
               >
-                <header className="mb-6 lg:mb-8 not-format bg-black/30 backdrop-blur-lg p-4 md:p-6 rounded-xl shadow-lg">
+                <header className="mb-6 lg:mb-8 not-format bg-black/30 backdrop-blur-lg p-6 rounded-xl shadow-lg">
                   <address className="flex items-center mb-4 not-italic">
                     <div className="inline-flex items-center space-x-4 text-sm text-white">
                       {profile.image && (
                         <Image
-                          className="w-12 h-12 md:w-16 md:h-16 rounded-full shadow-md"
+                          className="w-16 h-16 rounded-full shadow-md"
                           src={profile.image}
                           alt={profile.name}
                           width={64}
@@ -48,12 +48,12 @@ const Blog = () => {
                         />
                       )}
                       <div>
-                        <a href="#" rel="author" className="text-lg md:text-xl font-bold text-white hover:underline">
+                        <a href="#" rel="author" className="text-xl font-bold text-white hover:underline">
                           {profile.name}
                         </a>
-                        <p className="text-sm md:text-base text-gray-300 mt-1">{profile.role}</p>
-                        <p className="text-xs md:text-sm font-semibold text-gray-400">{profile.company}</p>
-                        <p className="text-xs md:text-sm text-gray-500">
+                        <p className="text-base text-gray-300 mt-1">{profile.role}</p>
+                        <p className="text-sm font-semibold text-gray-400">{profile.company}</p>
+                        <p className="text-sm text-gray-500">
                           <time dateTime={profile.date} title={profile.date}>
                             {new Date(profile.date).toLocaleDateString("en-US", {
                               month: "short",
@@ -66,7 +66,53 @@ const Blog = () => {
                     </div>
                   </address>
 
-                  <h1 className="mb-4 text-2xl md:text-3xl font-extrabold leading-tight text-white lg:mb-6 lg:text-4xl bg-black/10 backdrop-blur-lg p-3 md:p-4 rounded-xl shadow-lg">
+                  <h1 className="mb-4 text-3xl font-extrabold leading-tight text-white lg:mb-6 lg:text-4xl bg-black/10 backdrop-blur-lg p-4 rounded-xl shadow-lg">
+                    {profile.title}
+                  </h1>
+                </header>
+              </article>
+            ))}
+          </div>
+
+          {/* Mobile Screen */}
+          <div className="lg:hidden grid gap-4 grid-cols-1 px-4 py-6 mx-auto max-w-xs">
+            {profiles.map((profile, index) => (
+              <article
+                key={index}
+                className="mx-auto w-full max-w-xs format format-sm sm:format-base lg:format-lg format-blue dark:format-invert"
+              >
+                <header className="mb-4 not-format bg-black/30 backdrop-blur-lg p-4 rounded-xl shadow-lg">
+                  <address className="flex items-center mb-3 not-italic">
+                    <div className="inline-flex items-center space-x-3 text-sm text-white">
+                      {profile.image && (
+                        <Image
+                          className="w-12 h-12 rounded-full shadow-md"
+                          src={profile.image}
+                          alt={profile.name}
+                          width={64}
+                          height={64}
+                        />
+                      )}
+                      <div>
+                        <a href="#" rel="author" className="text-lg font-bold text-white hover:underline">
+                          {profile.name}
+                        </a>
+                        <p className="text-sm text-gray-300 mt-1">{profile.role}</p>
+                        <p className="text-xs font-semibold text-gray-400">{profile.company}</p>
+                        <p className="text-xs text-gray-500">
+                          <time dateTime={profile.date} title={profile.date}>
+                            {new Date(profile.date).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                            })}
+                          </time>
+                        </p>
+                      </div>
+                    </div>
+                  </address>
+
+                  <h1 className="mb-3 text-xl font-extrabold leading-tight text-white bg-black/10 backdrop-blur-lg p-3 rounded-xl shadow-lg">
                     {profile.title}
                   </h1>
                 </header>
@@ -146,54 +192,54 @@ const Blog = () => {
           <Stats />
 
           <h4 className="mt-8 text-2xl font-semibold text-gray-100">Table Example</h4>
-<p className="mb-4 text-gray-300 text-lg">
-  A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.
-</p>
+          <p className="mb-4 text-gray-300 text-lg">
+            A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.
+          </p>
 
-<div className="overflow-x-auto">
-  <table className="w-full min-w-full mb-8 bg-white/10 backdrop-blur-md rounded-lg shadow-lg">
-    <thead className="space-y-2 mx-auto">
-      <tr className="flex gap-x-4 justify-center pt-4">
-        <th className="flex-1 text-center p-2 text-white">Country</th>
-        <th className="flex-1 text-center p-2 text-white">Date &amp; Time</th>
-        <th className="flex-1 text-center p-2 text-white">Amount</th>
-      </tr>
-    </thead>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-full mb-8 bg-white/10 backdrop-blur-md rounded-lg shadow-lg">
+              <thead className="space-y-2 mx-auto">
+                <tr className="flex gap-x-4 justify-center pt-4">
+                  <th className="flex-1 text-center p-2 text-white">Country</th>
+                  <th className="flex-1 text-center p-2 text-white">Date &amp; Time</th>
+                  <th className="flex-1 text-center p-2 text-white">Amount</th>
+                </tr>
+              </thead>
 
-    <tbody className="space-y-2 mx-auto">
-      <tr className="flex gap-x-4 justify-center pt-4 px-4">
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">United States</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">April 21, 2021</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$2,300</strong></td>
-      </tr>
-      <tr className="flex gap-x-4 justify-center px-4">
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">Canada</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">May 31, 2021</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$300</strong></td>
-      </tr>
-      <tr className="flex gap-x-4 justify-center px-4">
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">United Kingdom</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">June 3, 2021</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$2,500</strong></td>
-      </tr>
-      <tr className="flex gap-x-4 justify-center px-4">
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">Australia</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">June 23, 2021</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$3,543</strong></td>
-      </tr>
-      <tr className="flex gap-x-4 justify-center px-4">
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">Germany</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">July 6, 2021</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$99</strong></td>
-      </tr>
-      <tr className="flex gap-x-4 justify-center px-4 pb-4">
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">France</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">August 23, 2021</td>
-        <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$2,540</strong></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+              <tbody className="space-y-2 mx-auto">
+                <tr className="flex gap-x-4 justify-center pt-4 px-4">
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">United States</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">April 21, 2021</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$2,300</strong></td>
+                </tr>
+                <tr className="flex gap-x-4 justify-center px-4">
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">Canada</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">May 31, 2021</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$300</strong></td>
+                </tr>
+                <tr className="flex gap-x-4 justify-center px-4">
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">United Kingdom</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">June 3, 2021</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$2,500</strong></td>
+                </tr>
+                <tr className="flex gap-x-4 justify-center px-4">
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">Australia</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">June 23, 2021</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$3,543</strong></td>
+                </tr>
+                <tr className="flex gap-x-4 justify-center px-4">
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">Germany</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">July 6, 2021</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$99</strong></td>
+                </tr>
+                <tr className="flex gap-x-4 justify-center px-4 pb-4">
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">France</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center">August 23, 2021</td>
+                  <td className="flex-1 p-4 text-gray-300 bg-gray-800/30 backdrop-blur-md rounded text-center"><strong>$2,540</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h3 className="text-3xl font-extrabold text-gray-100 mb-6">Best Practices for Designing Nabd Masr</h3>
 
