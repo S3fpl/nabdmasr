@@ -38,7 +38,9 @@ export default function RootLayout({
           <div className="absolute w-72 h-72 bg-red-700 opacity-25 blur-[130px] rounded-full top-16 right-1/3 animate-pulse delay-2500"></div>
           <div className="absolute w-80 h-80 bg-red-400 opacity-30 blur-[120px] rounded-full bottom-1/4 left-1/3 animate-pulse delay-3500"></div>
         </div>
+        <div className="fixed top-0 left-0 w-full z-[9999]">
         <ResponsivNav />  
+        </div>
         {children}
         <Footer />
       </body>

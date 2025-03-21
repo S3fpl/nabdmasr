@@ -54,6 +54,7 @@ const Hero = () => {
                     A platform for blood donation and organ transplantation, making a difference one drop at a time.
                 </p>
                 <button
+                    onClick={() => window.location.href = "/construction"}
                     className={clsx(
                         "mt-6 px-8 py-3 rounded-full font-bold transition-all duration-500 shadow-lg",
                         "backdrop-blur-lg bg-white/10 border border-white/20 hover:text-white text-gray-300",
@@ -63,6 +64,7 @@ const Hero = () => {
                 >
                     Get Started
                 </button>
+
             </div>
 
             <motion.aside
