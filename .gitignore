@@ -19,6 +19,7 @@
 
 # production
 /build
+desktop.ini
 
 # misc
 .DS_Store
