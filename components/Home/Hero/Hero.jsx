@@ -62,7 +62,7 @@ const Hero = () => {
                     )}
                     data-aos="zoom-in"
                 >
-                    Get Started
+                    Donation
                 </button>
 
             </div>

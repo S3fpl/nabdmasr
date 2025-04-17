@@ -29,3 +29,24 @@ input:-webkit-autofill {
   -webkit-text-fill-color: white;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+}
+
+select option {
+  background-color: rgba(25, 25, 25, 0.8);
+  color: white;
+}
+
+select option:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #111;
+}
