@@ -1,5 +1,4 @@
 "use client";
-// import { useState, useCallback } from "react";
 import { Navlinks } from "@/constant/consant";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
@@ -25,7 +24,7 @@ const Nav: React.FC<NavProps> = ({ openNav }) => {
             </Link>
 
             {/* Navigation Links */}
-            <div className="hidden lg:flex items-center justify-center space-x-8 bg-white/10 backdrop-blur-lg shadow-xl px-6 opacity-80 hover:opacity-100 py-3 rounded-full border border-white/30 mr-12">
+            <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center space-x-8 bg-white/10 backdrop-blur-lg shadow-xl px-6 opacity-80 hover:opacity-100 py-3 rounded-full border border-white/30">
                 {Navlinks.map(({ id, url, label }) => (
                     <Link
                         key={id}
@@ -38,7 +37,7 @@ const Nav: React.FC<NavProps> = ({ openNav }) => {
             </div>
 
             {/* Mobile Menu Icon */}
-            <div className="flex items-center space-x-4 md:space-x-6">
+            <div className="fixed top-5 right-28">
                 <MenuIcon
                     onClick={openNav}
                     className="cursor-pointer size-8 text-white lg:hidden transition-transform duration-300 hover:scale-110"
