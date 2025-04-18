@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
           <form className="space-y-3" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="block mb-1">Name</label>
+              <label htmlFor="name" className="">Name</label>
               <input
                 type="text"
                 id="name"
