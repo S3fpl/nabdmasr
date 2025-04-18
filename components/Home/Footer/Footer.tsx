@@ -4,45 +4,6 @@ import Link from "next/link";
 import { Shapes } from "@/components/ui/Shaps";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
 
-
-// arrays/footerLinks.ts
-export const footerLinks = [
-    {
-      title: "Nabd Masr",
-      links: [
-        { label: "About Us", href: "/about" },
-        { label: "Contact Us", href: "/contact" },
-        { label: "Statistics", href: "/statistics" },
-        { label: "Join as Volunteer", href: "/volunteers" },
-      ],
-    },
-    {
-      title: "My Account",
-      links: [
-        { label: "Settings", href: "/profile" },
-        { label: "Donation History", href: "/history" },
-        { label: "Requests", href: "/requests" },
-        { label: "Notifications", href: "/notifications" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { label: "FAQs", href: "/faq" },
-        { label: "Terms of Service", href: "/terms" },
-        { label: "Privacy Policy", href: "/privacy" },
-        { label: "Donation Conditions", href: "/conditions" },
-      ],
-    },
-    {
-      title: "Follow Us",
-      links: [
-        { label: "Facebook", href: "https://www.facebook.com/share/1C4AXwSorf/", icon: true },
-        { label: "Instagram", href: "https://instagram.com", icon: true },
-      ],
-    },
-  ];
-  
 const Footer = () => {
     return (
         <footer className="w-full relative z-10 backdrop-blur-lg bg-gray-600/10 py-12 mt-16 border-t border-white/20">
