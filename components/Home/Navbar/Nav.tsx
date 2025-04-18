@@ -25,7 +25,7 @@ const Nav: React.FC<NavProps> = ({ openNav }) => {
             </Link>
 
             {/* Navigation Links */}
-            <div className="hidden lg:flex items-center justify-center space-x-8 bg-white/10 backdrop-blur-lg shadow-xl px-6 opacity-80 hover:opacity-100 py-3 rounded-full border border-white/30 ">
+            <div className="hidden lg:flex items-center justify-center space-x-8 bg-white/10 backdrop-blur-lg shadow-xl px-6 opacity-80 hover:opacity-100 py-3 rounded-full border border-white/30 mr-12">
                 {Navlinks.map(({ id, url, label }) => (
                     <Link
                         key={id}
