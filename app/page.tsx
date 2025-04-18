@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/nextAuth";
 import Home from "@/components/Home/Home";
 import React from "react";
-import SigninWithGoogle from "./_components/SigninWithGoogle";
+import SigninWithGoogle from "../components/layout/SigninWithGoogle";
 import Image from "next/image";
 
 export default async function HomePage() {
@@ -26,7 +26,7 @@ export default async function HomePage() {
 
         </div>
       ) : (
-        <SigninWithGoogle />
+        <SigninWithGoogle  />
       )}
       <Home />
     </div>
