@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { XIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Shapes } from "@/components/ui/Shaps";
+import { signIn } from "next-auth/react";
 
 const Form = ({ closeForm, initialAuthType }) => {
     const [authType, setAuthType] = useState(initialAuthType);
@@ -20,14 +21,12 @@ const Form = ({ closeForm, initialAuthType }) => {
 
     return (
         <div
-            className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ${
-                animate ? "opacity-100" : "opacity-0"
-            }`}
+            className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0"
+                }`}
         >
             <div
-                className={`relative w-[90%] max-w-md p-4 sm:p-6 rounded-lg shadow-lg backdrop-blur-lg bg-white/10 dark:bg-gray-900/20 border border-white/20 transform transition-transform duration-300 ${
-                    animate ? "scale-100" : "scale-90"
-                }`}
+                className={`relative w-[90%] max-w-md p-4 sm:p-6 rounded-lg shadow-lg backdrop-blur-lg bg-white/10 dark:bg-gray-900/20 border border-white/20 transform transition-transform duration-300 ${animate ? "scale-100" : "scale-90"
+                    }`}
             >
                 {/* Shapes - Top Right */}
                 <div className="absolute -top-6 -right-6 sm:-top-8 sm:-right-8 opacity-80 animate-float z-[9999] pointer-events-none">
@@ -52,11 +51,10 @@ const Form = ({ closeForm, initialAuthType }) => {
 
                 {/* Form */}
                 <form
-                    className={`${
-                        authType === "signup"
-                            ? "grid grid-cols-1 sm:grid-cols-2 gap-4"
-                            : "space-y-4"
-                    }`}
+                    className={`${authType === "signup"
+                        ? "grid grid-cols-1 sm:grid-cols-2 gap-4"
+                        : "space-y-4"
+                        }`}
                 >
                     {authType === "signup" && (
                         <>
@@ -91,13 +89,13 @@ const Form = ({ closeForm, initialAuthType }) => {
                                     Gender
                                 </option>
                                 {["male", "female"].map((gender) => (
-                                    
+
                                     <option
-                                    key={gender}
-                                    value={gender}
-                                    className="bg-gray-900/90 hover:bg-white/30 hover:text-gray-900">
+                                        key={gender}
+                                        value={gender}
+                                        className="bg-gray-900/90 hover:bg-white/30 hover:text-gray-900">
                                         {gender}
-                                </option>
+                                    </option>
                                 ))}
                             </select>
 
@@ -138,27 +136,47 @@ const Form = ({ closeForm, initialAuthType }) => {
                     <input
                         type="email"
                         placeholder="Email"
-                        className={`${
-                            authType === "signup" ? "col-span-2" : "w-full"
-                        } p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none`}
+                        className={`${authType === "signup" ? "col-span-2" : "w-full"
+                            } p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none`}
                     />
                     <input
                         type="password"
                         placeholder="Password"
-                        className={`${
-                            authType === "signup" ? "col-span-2" : "w-full"
-                        } p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none`}
+                        className={`${authType === "signup" ? "col-span-2" : "w-full"
+                            } p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none`}
                     />
 
                     <Button
-                        className={`${
-                            authType === "signup" ? "col-span-2" : "w-full"
-                        } bg-red-600 text-white py-2 rounded hover:bg-red-700 transition`}
+                        className={`${authType === "signup" ? "col-span-2" : "w-full"
+                            } bg-red-600 text-white py-2 rounded hover:bg-red-700 transition`}
                     >
                         {authType === "login" ? "Login" : "Sign Up"}
                     </Button>
                 </form>
 
+                {/* Divider */}
+                <div className="flex items-center my-4">
+                    <div className="flex-grow h-px bg-white/30" />
+                    <span className="mx-2 text-sm text-white/70">or</span>
+                    <div className="flex-grow h-px bg-white/30" />
+                </div>
+
+                {/* Google Login Button */}
+                <Button
+                    variant="outline"
+                    className="w-full border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition flex items-center justify-center gap-2"
+                    onClick={() => {
+                        // تنفيذ عملية تسجيل الدخول باستخدام جوجل
+                        signIn("google");
+                    }}
+                >
+                    <img
+                        src="/google-icon.svg"
+                        alt="Google"
+                        className="w-5 h-5"
+                    />
+                    Login with Google
+                </Button>
                 {/* Toggle login/signup */}
                 <p className="mt-4 text-center text-sm text-gray-300">
                     {authType === "login"

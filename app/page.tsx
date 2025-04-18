@@ -1,12 +1,20 @@
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/nextAuth";
 import Home from "@/components/Home/Home";
-// import { Button } from "@/components/ui/button";
 import React from "react";
+import SigninWithGoogle from "./_components/SigninWithGoogle";
 
-const HomePage = () => {
+export default async function HomePage() {
+  const session = await getServerSession(authOptions);
+
   return (
-  <div>
-    <Home />
-  </div>);
-};
-
-export default HomePage;
+    <div className="text-white text-center mt-10">
+      {session ? (
+        <h1>Welcome {session.user?.name}</h1>
+      ) : (
+        <SigninWithGoogle />
+      )}
+      <Home />
+    </div>
+  );
+}
