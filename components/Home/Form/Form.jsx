@@ -25,35 +25,33 @@ const Form = ({ closeForm, initialAuthType }) => {
                 }`}
         >
             <div
-                className={`relative w-[90%] max-w-md p-4 sm:p-6 rounded-lg shadow-lg backdrop-blur-lg bg-white/10 dark:bg-gray-900/20 border border-white/20 transform transition-transform duration-300 ${animate ? "scale-100" : "scale-90"
+                className={`relative w-full max-w-sm p-3 sm:p-4 rounded-md shadow-lg backdrop-blur-md bg-white/10 dark:bg-gray-900/20 border border-white/20 transform transition-transform duration-300 ${animate ? "scale-100" : "scale-90"
                     }`}
             >
-                {/* Shapes - Top Right */}
-                <div className="absolute -top-6 -right-6 sm:-top-8 sm:-right-8 opacity-80 animate-float z-[9999] pointer-events-none">
-                    <Shapes className="w-12 h-12 md:w-16 md:h-16" />
+                {/* Shapes */}
+                <div className="absolute -top-5 -right-5 sm:-top-6 sm:-right-6 opacity-80 animate-float z-[9999] pointer-events-none">
+                    <Shapes className="w-10 h-10 md:w-12 md:h-12" />
                 </div>
-
-                {/* Shapes - Bottom Left */}
-                <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 opacity-80 animate-float z-[9999]">
-                    <Shapes className="w-12 h-12 md:w-16 md:h-16" />
+                <div className="absolute -bottom-5 -left-5 sm:-bottom-6 sm:-left-6 opacity-80 animate-float z-[9999]">
+                    <Shapes className="w-10 h-10 md:w-12 md:h-12" />
                 </div>
 
                 {/* Close button */}
                 <XIcon
                     onClick={handleClose}
-                    className="absolute top-4 right-4 sm:w-8 sm:h-8 w-6 h-6 cursor-pointer text-white hover:text-red-500 transition duration-200"
+                    className="absolute top-3 right-3 w-5 h-5 cursor-pointer text-white hover:text-red-500 transition duration-200"
                 />
 
-                {/* Form Title */}
-                <h2 className="text-2xl font-bold text-center text-red-600 mb-6 mt-10">
+                {/* Title */}
+                <h2 className="text-xl font-semibold text-center text-red-500 mb-4 mt-6">
                     {authType === "login" ? "Login" : "Sign Up"}
                 </h2>
 
                 {/* Form */}
                 <form
                     className={`${authType === "signup"
-                        ? "grid grid-cols-1 sm:grid-cols-2 gap-4"
-                        : "space-y-4"
+                        ? "grid grid-cols-1 sm:grid-cols-2 gap-3"
+                        : "space-y-3"
                         }`}
                 >
                     {authType === "signup" && (
@@ -61,12 +59,12 @@ const Form = ({ closeForm, initialAuthType }) => {
                             <input
                                 type="text"
                                 placeholder="Full Name"
-                                className="col-span-2 p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none"
+                                className="col-span-2 p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none"
                             />
                             <input
                                 type="tel"
                                 placeholder="Phone Number"
-                                className="p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none"
+                                className="p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none"
                                 value="+20 "
                                 pattern="^(\+20\s)(11|12|15)[0-9]{8}$"
                                 required
@@ -82,53 +80,35 @@ const Form = ({ closeForm, initialAuthType }) => {
                                     }
                                 }}
                             />
-
-                            {/* Gender Select - Glass Style */}
-                            <select className="w-full p-2 border rounded bg-white/20 backdrop-blur-md text-white focus:outline-none focus:ring-none cursor-pointer hover:bg-white/30 transition-colors duration-200 appearance-none">
-                                <option value="" className="bg-gray-900/90 hover:bg-white/30 hover:text-gray-900">
-                                    Gender
-                                </option>
+                            <select className="w-full p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white focus:outline-none cursor-pointer hover:bg-white/30 transition">
+                                <option value="">Gender</option>
                                 {["male", "female"].map((gender) => (
-
-                                    <option
-                                        key={gender}
-                                        value={gender}
-                                        className="bg-gray-900/90 hover:bg-white/30 hover:text-gray-900">
+                                    <option key={gender} value={gender}>
                                         {gender}
                                     </option>
                                 ))}
                             </select>
-
-                            {/* Blood Type Select - Glass Style */}
-                            <select className="custom-select w-full p-2 border rounded bg-white/20 backdrop-blur-md text-white focus:outline-none focus:ring-none cursor-pointer hover:bg-white/30 transition-colors duration-200 appearance-none">
-                                <option value="" className="bg-gray-900/90 hover:bg-white/30 hover:text-gray-900">
-                                    Blood Type
-                                </option>
+                            <select className="w-full p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white focus:outline-none cursor-pointer hover:bg-white/30 transition">
+                                <option value="">Blood Type</option>
                                 {['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'].map((type) => (
-                                    <option
-                                        key={type}
-                                        value={type}
-                                        className="bg-gray-900/90 hover:bg-white/30 hover:text-gray-900"
-                                    >
+                                    <option key={type} value={type}>
                                         {type}
                                     </option>
                                 ))}
                             </select>
-
                             <input
                                 type="date"
-                                placeholder="Date of Birth"
-                                className="p-2 border rounded bg-white/20 backdrop-blur-md text-white focus:outline-none focus:ring-none"
+                                className="p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white focus:outline-none"
                             />
                             <input
                                 type="text"
                                 placeholder="Governorate"
-                                className="p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none"
+                                className="p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none"
                             />
                             <input
                                 type="date"
                                 placeholder="Last Donation Date"
-                                className="p-2 border rounded bg-white/20 backdrop-blur-md text-white focus:outline-none focus:ring-none"
+                                className="p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white focus:outline-none"
                             />
                         </>
                     )}
@@ -136,49 +116,44 @@ const Form = ({ closeForm, initialAuthType }) => {
                     <input
                         type="email"
                         placeholder="Email"
-                        className={`${authType === "signup" ? "col-span-2" : "w-full"
-                            } p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none`}
+                        className={`${authType === "signup" ? "col-span-2" : "w-full"} p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none`}
                     />
                     <input
                         type="password"
                         placeholder="Password"
-                        className={`${authType === "signup" ? "col-span-2" : "w-full"
-                            } p-2 border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-none`}
+                        className={`${authType === "signup" ? "col-span-2" : "w-full"} p-1.5 text-sm border rounded bg-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none`}
                     />
 
                     <Button
-                        className={`${authType === "signup" ? "col-span-2" : "w-full"
-                            } bg-red-600 text-white py-2 rounded hover:bg-red-700 transition`}
+                        className={`${authType === "signup" ? "col-span-2" : "w-full"} bg-red-600 text-white text-sm py-1.5 rounded hover:bg-red-700 transition`}
                     >
                         {authType === "login" ? "Login" : "Sign Up"}
                     </Button>
                 </form>
 
                 {/* Divider */}
-                <div className="flex items-center my-4">
+                <div className="flex items-center my-3">
                     <div className="flex-grow h-px bg-white/30" />
-                    <span className="mx-2 text-sm text-white/70">or</span>
+                    <span className="mx-2 text-xs text-white/70">or</span>
                     <div className="flex-grow h-px bg-white/30" />
                 </div>
 
                 {/* Google Login Button */}
                 <Button
                     variant="outline"
-                    className="w-full border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition flex items-center justify-center gap-2"
-                    onClick={() => {
-                        // تنفيذ عملية تسجيل الدخول باستخدام جوجل
-                        signIn("google");
-                    }}
+                    className="w-full border-white/30 text-white text-sm py-1.5 hover:bg-white/10 hover:border-white/50 transition flex items-center justify-center gap-2"
+                    onClick={() => signIn("google")}
                 >
                     <img
                         src="/google-icon.svg"
                         alt="Google"
-                        className="w-5 h-5"
+                        className="w-4 h-4"
                     />
                     Login with Google
                 </Button>
+
                 {/* Toggle login/signup */}
-                <p className="mt-4 text-center text-sm text-gray-300">
+                <p className="mt-6text-center text-xs text-gray-300">
                     {authType === "login"
                         ? "Don't have an account?"
                         : "Already have an account?"}{" "}
@@ -186,7 +161,7 @@ const Form = ({ closeForm, initialAuthType }) => {
                         onClick={() =>
                             setAuthType(authType === "login" ? "signup" : "login")
                         }
-                        className="text-red-500 font-bold hover:underline"
+                        className="text-red-500 font-semibold hover:underline"
                     >
                         {authType === "login" ? "Sign up" : "Login"}
                     </button>

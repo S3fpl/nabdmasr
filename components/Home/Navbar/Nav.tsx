@@ -23,7 +23,7 @@ const Nav: React.FC<NavProps> = ({ openNav }) => {
                 />
             </Link>
 
-            {/* Navigation Links */}
+            {/* Navigation Links - Centered */}
             <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center space-x-8 bg-white/10 backdrop-blur-lg shadow-xl px-6 opacity-80 hover:opacity-100 py-3 rounded-full border border-white/30">
                 {Navlinks.map(({ id, url, label }) => (
                     <Link
@@ -36,11 +36,11 @@ const Nav: React.FC<NavProps> = ({ openNav }) => {
                 ))}
             </div>
 
-            {/* Mobile Menu Icon */}
-            <div className="fixed top-5 right-28">
+            {/* Mobile Menu Icon - Centered but moved to right on tablets */}
+            <div className="fixed top-9 left-1/2 -translate-x-1/2 md:left-auto md:right-36 md:translate-x-0 lg:hidden">
                 <MenuIcon
                     onClick={openNav}
-                    className="cursor-pointer size-8 text-white lg:hidden transition-transform duration-300 hover:scale-110"
+                    className="cursor-pointer size-8 text-white transition-transform duration-300 hover:scale-110"
                     aria-label="Open navigation menu"
                 />
             </div>
