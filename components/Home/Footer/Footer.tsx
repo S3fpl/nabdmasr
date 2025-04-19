@@ -54,6 +54,8 @@ const Footer = () => {
                             <li><Link href="/terms" className="hover:text-gray-300">Terms of Service</Link></li>
                             <li><Link href="/privacy" className="hover:text-gray-300">Privacy Policy</Link></li>
                             <li><Link href="/conditions" className="hover:text-gray-300">Donation Conditions</Link></li>
+                            {/* رابط الكتاب */}
+                            <li><Link href="/book" className="hover:text-gray-300">Nabd Masr Book</Link></li> {/* يمكن تغير الرابط إلى رابط الكتاب الفعلي */}
                         </ul>
                     </div>
 
@@ -66,7 +68,6 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-
             </div>
 
             {/* Copyright Section */}
