@@ -6,6 +6,7 @@ import { Session } from "next-auth";
 import SigninWithGoogle from "./SigninWithGoogle";
 import Logout from "./Logout";
 import Link from "next/link";
+import ChangeEmailWithGoogle from "./ChangeEmailWithGoogle";
 
 interface UserDataProps {
     session: Session | null;
@@ -27,7 +28,6 @@ const UserData: React.FC<UserDataProps> = ({ session }) => {
 
     return (
         <div className="text-white text-center mt-10 z-[9999] relative">
-            
             {session ? (
                 <div className="group relative">
                     {session.user?.image && session.user.image.trim() !== "" && (
@@ -75,40 +75,46 @@ const UserData: React.FC<UserDataProps> = ({ session }) => {
                                     <span>Account</span>
                                     <span>Settings</span>
                                 </h2>
+                                {/* User Image and Email */}
+                                <div className="flex flex-col items-center mb-6">
+                                    {session.user?.image && (
+                                        <Image
+                                            src={session.user.image}
+                                            alt="User Image"
+                                            width={80}
+                                            height={80}
+                                            className="rounded-full border border-white/30 shadow-md"
+                                        />
+                                    )}
+                                    {session.user?.email && (
+                                        <p className="mt-3 text-sm text-white/90 hover:bg-white/20 px-4 py-2 rounded-lg border border-white/30 shadow-md transition-all duration-300 w-full text-center">
+                                            {session.user.email}
+                                        </p>
+                                    )}
+                                </div>
 
                                 <ul className="space-y-4">
-
                                     {/* View Profile Link */}
-                                    <li className="hover:bg-white/20 rounded-lg p-2 transition-all duration-300  hover:text-red-300">
-                                        <Link
-                                            href="/profile"
-                                            className=" w-full text-left"
-                                        >
+                                    <li className="text-sm text-white/90 hover:bg-white/20 px-4 py-2 rounded-lg border border-white/30 shadow-md transition-all duration-300">
+                                        <Link href="/profile" className="w-full text-left block hover:text-red-300">
                                             View Profile
                                         </Link>
                                     </li>
 
-                                    {/* Donation History Link */}
-                                    <li className="hover:bg-white/20 rounded-lg p-2 transition-all duration-300  hover:text-red-300">
-                                        <Link
-                                            href="/donation-history"
-                                            className=" w-full text-left"
-                                        >
+                                    <li className="text-sm text-white/90 hover:bg-white/20 px-4 py-2 rounded-lg border border-white/30 shadow-md transition-all duration-300">
+                                        <Link href="/donation-history" className="w-full text-left block hover:text-red-300">
                                             Donation History
                                         </Link>
                                     </li>
 
-                                    {/* Previous Donations Link */}
-                                    <li className="hover:bg-white/20 rounded-lg p-2 transition-all duration-300 hover:text-red-300">
-                                        <Link
-                                            href="/previous-donations"
-                                            className=" w-full text-left"
-                                        >
+                                    <li className="text-sm text-white/90 hover:bg-white/20 px-4 py-2 rounded-lg border border-white/30 shadow-md transition-all duration-300">
+                                        <Link href="/previous-donations" className="w-full text-left block hover:text-red-300">
                                             Previous Donations
                                         </Link>
                                     </li>
                                 </ul>
-
+                                    {/* Change Email Link */}
+                                    <ChangeEmailWithGoogle />
                                 {/* Logout Button */}
                                 <Logout closeModal={closeModal} />
                             </div>
