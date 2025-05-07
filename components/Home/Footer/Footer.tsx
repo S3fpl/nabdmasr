@@ -55,7 +55,7 @@ const Footer = () => {
                             <li><Link href="/privacy" className="hover:text-gray-300">Privacy Policy</Link></li>
                             <li><Link href="/conditions" className="hover:text-gray-300">Donation Conditions</Link></li>
                             {/* رابط الكتاب */}
-                            <li><Link href="/book" className="hover:text-gray-300">Nabd Masr Book</Link></li> {/* يمكن تغير الرابط إلى رابط الكتاب الفعلي */}
+                            <li><Link href="/book" className="hover:text-gray-300">Guide</Link></li> {/* يمكن تغير الرابط إلى رابط الكتاب الفعلي */}
                         </ul>
                     </div>
 
