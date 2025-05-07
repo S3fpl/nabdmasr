@@ -17,21 +17,24 @@ export default function Page() {
 
   return (
     <>
-      <div className="flex flex-col items-center space-y-4">
-        {/* Login & Signup Buttons */}
-        <div className="flex space-x-4 fixed top-8 right-7 z-[9999]">
-          <button
-            onClick={() => handleAuth("login")}
-            className="border border-white/30 px-4 py-2 rounded-2xl transition duration-300 shadow-xl backdrop-blur-xl bg-white/10 hover:bg-white/20 hover:border-white/50 hover:shadow-2xl text-white opacity-80 hover:opacity-100"
-          >
-            Login
-          </button>
-          <button
-            onClick={() => handleAuth("signup")}
-            className="border border-white/30 px-4 py-2 rounded-2xl transition duration-300 shadow-xl backdrop-blur-xl bg-white/10 hover:bg-white/20 hover:border-white/50 hover:shadow-2xl text-white opacity-80 hover:opacity-100"
-          >
-            Signup
-          </button>
+      <div className="fixed top-0 right-0 w-full z-[9999] ">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-end py-4">
+            <div className="flex space-x-4">
+              <button
+                onClick={() => handleAuth("login")}
+                className="border border-white/30 px-4 py-2 rounded-2xl transition duration-300 shadow-xl backdrop-blur-xl bg-white/10 hover:bg-white/20 hover:border-white/50 hover:shadow-2xl text-white opacity-80 hover:opacity-100 text-sm sm:text-base"
+              >
+                Login
+              </button>
+              <button
+                onClick={() => handleAuth("signup")}
+                className="border border-white/30 px-4 py-2 rounded-2xl transition duration-300 shadow-xl backdrop-blur-xl bg-white/10 hover:bg-white/20 hover:border-white/50 hover:shadow-2xl text-white opacity-80 hover:opacity-100 text-sm sm:text-base"
+              >
+                Signup
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       {showForm && (
