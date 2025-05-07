@@ -84,4 +84,9 @@ export const Navlinks = [
         url: "/copyright",
         label: "Copyright",
     },
+    {
+        id: 20,
+        url: "/comments",
+        label: "Comments",
+    },
 ];
