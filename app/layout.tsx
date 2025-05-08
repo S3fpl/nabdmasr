@@ -16,6 +16,7 @@ export const metadata = {
 };
 
 export default function RootLayout({
+
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -23,13 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <meta name="google-site-verification" content="uHv9NSBGxuAfKhQbOpTqsUjCnc12mXw8p4RSN_IpFpM" />
-      <meta name="google-site-verification" content="7NLx01_RjPg3y7QUhX4WzkYEiztKpsZO5H4dMbsXlqE" />
+        <meta name="google-site-verification" content="uHv9NSBGxuAfKhQbOpTqsUjCnc12mXw8p4RSN_IpFpM" />
+        <meta name="google-site-verification" content="7NLx01_RjPg3y7QUhX4WzkYEiztKpsZO5H4dMbsXlqE" />
       </head>
       <body className={`${font.className} bg-gray-950 antialiased relative overflow-hidden`}>
         <div className=" fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:30px_30px]">
-        </div>
+          <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:30px_30px]">
+          </div>
           <div className="absolute w-72 h-72 bg-red-500 opacity-40 blur-[100px] rounded-full top-10 left-10 animate-pulse"></div>
           <div className="absolute w-96 h-96 bg-red-600 opacity-35 blur-[90px] rounded-full top-32 right-10 animate-pulse delay-1000"></div>
           <div className="absolute w-96 h-96 bg-red-700 opacity-30 blur-[120px] rounded-full bottom-10 left-1/4 animate-pulse delay-2000"></div>
@@ -39,7 +40,7 @@ export default function RootLayout({
           <div className="absolute w-80 h-80 bg-red-400 opacity-30 blur-[120px] rounded-full bottom-1/4 left-1/3 animate-pulse delay-3500"></div>
         </div>
         <div className="fixed top-0 left-0 w-full z-[9999]">
-        <ResponsivNav />  
+          <ResponsivNav />
         </div>
         {children}
         <Footer />
