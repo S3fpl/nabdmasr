@@ -10,9 +10,10 @@ const Footer = () => {
         return Navlinks.filter(link => ids.includes(link.id));
     };
 
-    const nabdMasrLinks = getLinksByCategory([2, 4, 8, 9, 20,   21, 22]);
-    const accountLinks = getLinksByCategory([11, 12, 13, 14]);
+    const nabdMasrLinks = getLinksByCategory([2, 3, 4, 22, 21]);
+    const accountLinks = getLinksByCategory([1, 10, 11, 12, 13, 14]);
     const resourceLinks = getLinksByCategory([5, 15, 16, 17, 18]);
+    const moreLinks = getLinksByCategory([8, 9, 20,]);
 
     const copyrightLink = Navlinks.find(link => link.id === 19);
 
@@ -34,7 +35,7 @@ const Footer = () => {
                 </div>
 
                 {/* روابط الفوتر */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-white text-left w-full">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-white text-left w-full">
                     {/* Nabd Masr */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Nabd Masr</h3>
@@ -63,11 +64,23 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Resources */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Resources</h3>
                         <ul>
                             {resourceLinks.map(link => (
+                                <li key={link.id}>
+                                    <Link href={link.url} className="hover:text-gray-300">
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* Resources */}
+                    <div>
+                        <h3 className="text-lg font-semibold mb-4">More</h3>
+                        <ul>
+                            {moreLinks.map(link => (
                                 <li key={link.id}>
                                     <Link href={link.url} className="hover:text-gray-300">
                                         {link.label}
@@ -95,8 +108,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-
-            {/* حقوق النشر */}
             <div className="text-center text-white text-sm mt-8 border-t border-white/20 pt-4">
                 <p>
                     © 2025 Nabd Masr. All rights reserved.{" "}
