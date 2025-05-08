@@ -119,16 +119,23 @@ const CommentsPage = () => {
                 </form>
 
                 {/* Comments Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
                     {comments.map((comment) => {
                         const daysRemaining = getDaysRemaining(comment.createdAt)
+                        // Determine grid span based on index and content length
+                        const isLongComment = comment.text.length > 100
+                        const gridSpan = isLongComment ? 'md:col-span-2 md:row-span-2' : 'md:col-span-1'
+
                         return (
-                            <div key={comment.id} className="backdrop-blur-md bg-white/10 p-6 rounded-2xl shadow-sm border border-red-100 transform hover:scale-[1.01] transition-all duration-200 h-full flex flex-col">
+                            <div
+                                key={comment.id}
+                                className={`backdrop-blur-md bg-white/10 p-6 rounded-2xl shadow-sm border border-red-100 transform hover:scale-[1.01] transition-all duration-200 h-full flex flex-col ${gridSpan}`}
+                            >
                                 <div className="flex justify-between items-start mb-3">
-                                    <h3 className="font-semibold text-white">{comment.author}</h3>
+                                    <h3 className="font-semibold text-white text-lg">{comment.author}</h3>
                                     <span className="text-sm text-red-200">{comment.timestamp}</span>
                                 </div>
-                                <p className="text-white mb-4 leading-relaxed flex-grow">{comment.text}</p>
+                                <p className="text-white mb-4 leading-relaxed flex-grow overflow-y-auto">{comment.text}</p>
                                 <div className="flex justify-between items-center mt-auto">
                                     <button
                                         onClick={() => handleLike(comment.id)}
