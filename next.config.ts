@@ -6,7 +6,12 @@ const nextConfig: NextConfig = {
     EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
   },
   images: {
-    domains: ["lh3.googleusercontent.com", "res.cloudinary.com" ],
+    domains: [
+      "lh3.googleusercontent.com",
+      "res.cloudinary.com",
+      "flowbite.com",
+      "flowbite.s3.amazonaws.com", // ← أضف ده كمان
+    ],
   },
 };
 
