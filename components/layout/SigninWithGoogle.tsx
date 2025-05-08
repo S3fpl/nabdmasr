@@ -17,9 +17,9 @@ export default function Page() {
 
   return (
     <>
-      <div className="fixed top-0 right-0 w-full z-[9999] ">
+      <div className="fixed top-0 right-0 w-full z-[9999]">
         <div className="container mx-auto px-4">
-          <div className="flex justify-end py-4">
+          <div className="absolute flex right-4 top-0 sm:top-4 md:top-0  justify-end py-4">
             <div className="flex space-x-4">
               <button
                 onClick={() => handleAuth("login")}

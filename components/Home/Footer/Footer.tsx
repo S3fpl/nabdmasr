@@ -10,7 +10,7 @@ const Footer = () => {
         return Navlinks.filter(link => ids.includes(link.id));
     };
 
-    const nabdMasrLinks = getLinksByCategory([2, 4, 8, 9, 20]);
+    const nabdMasrLinks = getLinksByCategory([2, 4, 8, 9, 20,   21, 22]);
     const accountLinks = getLinksByCategory([11, 12, 13, 14]);
     const resourceLinks = getLinksByCategory([5, 15, 16, 17, 18]);
 

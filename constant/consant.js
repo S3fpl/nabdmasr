@@ -72,7 +72,7 @@ export const Navlinks = [
     {
         id: 17,
         url: "/conditions",
-        label: "Donation Conditions",
+        label: " Conditions",
     },
     {
         id: 18,
@@ -88,5 +88,20 @@ export const Navlinks = [
         id: 20,
         url: "/comments",
         label: "Comments",
+    },
+    {
+        id: 21,
+        url: "/application",
+        label: "Application",
+    },
+    {
+        id: 22,
+        url: "/security",
+        label: "Security",
+    },
+    {
+        id: 23,
+        url: "/hospitals",
+        label: "Hospitals",
     },
 ];
