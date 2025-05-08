@@ -1,99 +1,131 @@
 "use client";
 import Contact from '@/components/Home/Contact/Contact';
-import { Shapes } from '@/components/ui/Shaps';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
 interface FaqItem {
   question: string;
   answer: string;
+  category: string;
 }
 
 const faqData: FaqItem[] = [
   {
+    category: "About Nabd Masr",
     question: 'What is Nabd Masr?',
     answer: 'Nabd Masr is a blood donation platform that connects donors and those in need of blood, facilitating fast and easy communication.',
   },
   {
+    category: "About Nabd Masr",
     question: 'How can I become a blood donor?',
     answer: 'Simply register on our platform, complete your profile, and indicate your willingness to donate. You will be contacted when there is a need for your blood type.',
   },
   {
+    category: "Platform Usage",
     question: 'Is there any cost for using the platform?',
     answer: 'No, Nabd Masr is a free platform created to help save lives by connecting donors and patients efficiently.',
   },
   {
+    category: "Platform Usage",
     question: 'Can I track my donation history?',
     answer: 'Yes, you can view your donation history through your profile page, including the dates and details of your previous donations.',
   },
   {
+    category: "Support & Help",
     question: 'How do I contact support?',
     answer: 'You can reach our support team via the contact form on the website or through our hotline for urgent assistance.',
   },
   {
+    category: "Account Management",
     question: 'Can I update my personal information?',
     answer: 'Yes, you can easily update your profile information from your account settings page.',
   },
 ];
 
+const categories = Array.from(new Set(faqData.map(item => item.category)));
+
 const Faq: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>(categories[0]);
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const filteredFaqs = faqData.filter(item => item.category === activeCategory);
+
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center p-4 mt-16">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center p-4 mt-16 ">
       {/* Header Section */}
-      <header className="mb-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-red-500 drop-shadow-lg">Nabd Masr FAQ</h1>
-        <p className="text-gray-400 text-lg md:text-xl mt-2">Everything you need to know about our platform.</p>
+      <header className="mb-12 text-center">
+        <h1 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-pink-500">
+          Frequently Asked Questions
+        </h1>
+        <p className="text-gray-400 text-xl md:text-2xl mt-4">
+          Find answers to common questions about Nabd Masr
+        </p>
       </header>
 
-      {/* Main FAQ Container */}
-      <div className="relative p-6 w-full max-w-4xl bg-gray-800/50 backdrop-blur-2xl rounded-2xl shadow-xl border border-gray-700 z-10">
-        {/* Shapes on FAQ Container */}
-        <div className="absolute -top-8 left-28 opacity-60">
-          <Shapes className="w-12 h-12 md:w-16 md:h-16" />
-        </div>
-        <div className="absolute -bottom-8 right-28 opacity-60">
-          <Shapes className="w-12 h-12 md:w-16 md:h-16" />
-        </div>
+      {/* Category Navigation */}
+      <div className="flex flex-wrap justify-center gap-4 mb-8">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={`px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 ${activeCategory === category
+              ? 'bg-red-500 text-white shadow-lg shadow-red-500/30'
+              : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+              }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
 
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 text-center">Frequently Asked Questions</h2>
-        {faqData.map((item, index) => (
+      {/* Main FAQ Container */}
+      <div className="w-full max-w-5xl">
+        {filteredFaqs.map((item, index) => (
           <div
             key={index}
-            className={`mb-4 p-4 rounded-xl transition-all duration-300 ease-in-out ${activeIndex === index ? 'bg-gray-700/60' : 'bg-gray-800/20'
-              }`}
+            className="mb-6 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/10"
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="w-full text-left text-white text-xl md:text-2xl font-bold flex justify-between items-center"
+              className="w-full p-6 text-left flex justify-between items-center"
             >
-              {item.question}
-              <span className="text-gray-400 text-3xl md:text-4xl">
+              <span className="text-xl md:text-2xl font-semibold text-white">
+                {item.question}
+              </span>
+              <span className="text-2xl text-gray-400 transition-transform duration-300">
                 {activeIndex === index ? '−' : '+'}
               </span>
             </button>
             {activeIndex === index && (
-              <p className="mt-2 text-gray-300 text-base md:text-lg leading-relaxed">{item.answer}</p>
+              <div className="px-6 pb-6">
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  {item.answer}
+                </p>
+              </div>
             )}
           </div>
         ))}
       </div>
-      <Contact />
 
-      {/* Footer Section */}
-      <footer className="-mt-12 text-center">
-        <p className="text-gray-500 text-md md:text-lg">
-          Have more questions?
-          <Link href="/contact" className="text-red-400 font-semibold hover:text-red-300 transition-colors ml-1">
-            Contact us!
-          </Link>
+      {/* Additional Help Section */}
+      <div className="mt-16 mb-8 text-center">
+        <h2 className="text-3xl font-bold text-white mb-4">Still Have Questions?</h2>
+        <p className="text-gray-400 text-lg mb-6">
+          Our support team is here to help you 24/7
         </p>
-      </footer>
+        <Link
+          href="/contact"
+          className="inline-block px-8 py-4 bg-red-500 text-white rounded-full text-lg font-semibold hover:bg-red-600 transition-colors duration-300 shadow-lg shadow-red-500/30"
+        >
+          Contact Support
+        </Link>
+      </div>
+
+      <Contact />
     </div>
   );
 };
