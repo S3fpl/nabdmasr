@@ -8,7 +8,7 @@ function Requests() {
     return (
         <section className="min-h-screen px-4 py-12 flex flex-col items-center bg-transparent mt-16">
             <div className="w-full max-w-5xl">
-                {/* Header with Stats */}
+                {/* Header with Stats */} 
                 <div className="text-center mb-12">
                     <h1 className="text-5xl font-extrabold mb-2 text-white drop-shadow-lg">Blood Requests</h1>
                     <p className="text-lg text-white/80 mb-8">For Hospitals and Blood Banks Only</p>
