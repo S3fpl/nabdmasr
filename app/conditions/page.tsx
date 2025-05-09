@@ -2,7 +2,7 @@ import React from 'react'
 
 const ConditionsPage = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] p-4">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br mt-8 p-4">
             <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl max-w-3xl w-full p-8 text-white space-y-6">
                 <h1 className="text-3xl font-bold text-center text-white mb-4">Terms & Conditions</h1>
 

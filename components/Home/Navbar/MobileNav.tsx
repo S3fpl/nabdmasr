@@ -2,6 +2,7 @@ import { Navlinks } from "@/constant/consant";
 import { XIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import SigninWithGoogle from "@/components/layout/SigninWithGoogle";
 
 interface MobileNavProps {
     showNav: boolean;
@@ -22,14 +23,12 @@ const MobileNav: React.FC<MobileNavProps> = ({ showNav, closeNav }) => {
 
     return (
         <div
-            className={`fixed inset-0 bg-black/50 backdrop-blur-lg z-[1050] flex items-center justify-center transition-opacity duration-300 ${
-                animate ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
+            className={`fixed inset-0 bg-black/50 backdrop-blur-lg z-[1050] flex items-center justify-center transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
         >
             <header
-                className={`relative bg-white/10 border border-white/20 shadow-xl rounded-2xl p-8 text-white flex flex-col items-center space-y-6 w-11/12 max-w-md transition-transform duration-300 ${
-                    animate ? "scale-100" : "scale-0"
-                }`}
+                className={`relative bg-white/10 border border-white/20 shadow-xl rounded-2xl p-8 text-white flex flex-col items-center space-y-6 w-11/12 max-w-md transition-transform duration-300 ${animate ? "scale-100" : "scale-0"
+                    }`}
             >
                 {/* زر الإغلاق */}
                 <XIcon
@@ -48,6 +47,11 @@ const MobileNav: React.FC<MobileNavProps> = ({ showNav, closeNav }) => {
                             {link.label}
                         </Link>
                     ))}
+                </div>
+
+                {/* Auth Buttons */}
+                <div className="w-full pt-4 border-t border-white/20">
+                    <SigninWithGoogle />
                 </div>
             </header>
         </div>

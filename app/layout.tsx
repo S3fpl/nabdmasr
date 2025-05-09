@@ -2,6 +2,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import ResponsivNav from "@/components/Home/Navbar/ResponsivNav";
 import Footer from "@/components/Home/Footer/Footer";
+import Providers from "@/components/layout/Providers";
 
 const font = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -16,7 +17,6 @@ export const metadata = {
 };
 
 export default function RootLayout({
-
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -42,7 +42,9 @@ export default function RootLayout({
         <div className="fixed top-0 left-0 w-full z-[9999]">
           <ResponsivNav />
         </div>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Footer />
       </body>
     </html>

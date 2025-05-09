@@ -3,6 +3,7 @@ import { Navlinks } from "@/constant/consant";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import SigninWithGoogle from "@/components/layout/SigninWithGoogle";
 
 interface NavProps {
     openNav: () => void;
@@ -48,6 +49,11 @@ const Nav: React.FC<NavProps> = ({ openNav }) => {
                         aria-label="Open navigation menu"
                     />
                 </div>
+            </div>
+
+            {/* Auth Buttons */}
+            <div className="hidden lg:block">
+                <SigninWithGoogle />
             </div>
         </nav>
     );
