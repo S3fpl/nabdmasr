@@ -75,8 +75,8 @@ function Requests() {
                                     <div className="space-y-4">
                                         <h3 className="text-xl font-semibold text-white mb-4">Institution Information</h3>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <select className="p-4 rounded-xl bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-red-400">
-                                                <option value="" disabled selected>Institution Type</option>
+                                            <select className="p-4 rounded-xl bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-red-400" value="">
+                                                <option value="" disabled>Institution Type</option>
                                                 <option value="hospital">Hospital</option>
                                                 <option value="blood_bank">Blood Bank</option>
                                             </select>
@@ -97,8 +97,8 @@ function Requests() {
                                     <div className="space-y-4">
                                         <h3 className="text-xl font-semibold text-white mb-4">Blood Requirements</h3>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <select className="p-4 rounded-xl bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-red-400">
-                                                <option value="" disabled selected>Blood Type</option>
+                                            <select className="p-4 rounded-xl bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-red-400" value="">
+                                                <option value="" disabled>Blood Type</option>
                                                 <option value="A+">A+</option>
                                                 <option value="A-">A-</option>
                                                 <option value="B+">B+</option>
@@ -109,8 +109,8 @@ function Requests() {
                                                 <option value="AB-">AB-</option>
                                             </select>
                                             <input className="p-4 rounded-xl bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-red-400" placeholder="Units Needed" type="number" min="1" />
-                                            <select className="p-4 rounded-xl bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-red-400">
-                                                <option value="" disabled selected>Urgency Level</option>
+                                            <select className="p-4 rounded-xl bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-red-400" value="">
+                                                <option value="" disabled>Urgency Level</option>
                                                 <option value="emergency">Emergency (Within 2 hours)</option>
                                                 <option value="urgent">Urgent (Within 24 hours)</option>
                                                 <option value="priority">Priority (Within 48 hours)</option>
